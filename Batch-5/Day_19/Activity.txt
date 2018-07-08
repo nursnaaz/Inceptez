@@ -1,0 +1,15 @@
+Activity to be completed now
+
+https://raw.githubusercontent.com/nursnaaz/Batch-1-Beseant-Tech/master/Day_30%20Decision%20tree/CustomerData1.csv
+
+ Predict the income of the customer using, KNN, Decisiontree Regression,
+
+ Activity2:
+
+ Predict person will die or not with the disease
+
+ https://github.com/nursnaaz/Batch-1-Beseant-Tech/blob/master/Day_32_Ensemble%20Learning/Lab/Hepatitis%20Data%20Description.txt
+
+ https://raw.githubusercontent.com/nursnaaz/Batch-1-Beseant-Tech/master/Day_32_Ensemble%20Learning/Lab/hepatitis.txt
+
+Predict it using Decision Tree, SVM, Random forest, adaboost, Stacking(logistic,KNN,SVM with stack of Naviye bayes)
