@@ -1,0 +1,21 @@
+Masked Attribute,Attribute Name,Desscription
+x1,VehicleID,ID
+x2,DataCollectedDate,The date on which data collected
+x3,NameOfTheVehicle,Name of the vehicle
+x4,SellerType,Type of seller
+x5,OfferType,Type of Offer 
+y,Price,Price value
+x6,VehicleType,Type of vehicle
+x7,YearOfVehicleRegistration,The year in which the vehicle was first registered
+x8,GearBoxType,The type of transmission
+x9,PowerOfTheEngine,The power of engine of the vehicle
+x10,ModelOfTheVehicle,The model of the vehicle
+x11,DistranceTravelled,Number of kilometers the vehicle moved
+x12,MonthOfVehicleRegistration,The month in which the vehicle was first registered
+x13,TypeOfTheFuelUsed,The type of the fuel used for the vehicle
+x14,BrandOfTheVehicle,The brand of the vehicle
+x15,IsDamageRepaired,"If the vehicle has a damage, whether it is repaired yet or not"
+x16,DateOfAdCreation,The date the ad was created 
+x17,NumberOfPictures,The numebr of pictures in the ad about the vehicle
+x18,ZipCode,Zip code
+x19,DateOfAdLastSeen,Th date on which the ad was seen before sale

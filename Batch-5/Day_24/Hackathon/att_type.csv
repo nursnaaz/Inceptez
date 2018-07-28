@@ -1,0 +1,21 @@
+Masked Attribute,AttrName,Type
+x1,VehicleID,ID
+x2,DataCollectedDate,datetime
+x3,NameOfTheVehicle,string
+x4,SellerType,categorical
+x5,OfferType,categorical
+y,Price,integer
+x6,VehicleType,categorical
+x7,YearOfVehicleRegistration,integer
+x8,GearBoxType,categorical
+x9,PowerOfTheEngine,integer
+x10,ModelOfTheVehicle,string
+x11,DistranceTravelled,numeric
+x12,MonthOfVehicleRegistration,categorical
+x13,TypeOfTheFuelUsed,categorical
+x14,BrandOfTheVehicle,categorical
+x15,IsDamageRepaired,categorical
+x16,DateOfAdCreation,datetime
+x17,NumberOfPictures,boolean
+x18,ZipCode,integer
+x19,DateOfAdLastSeen,datetime
