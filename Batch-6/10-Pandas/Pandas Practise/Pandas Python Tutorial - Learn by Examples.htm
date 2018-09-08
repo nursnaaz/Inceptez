@@ -1,0 +1,2196 @@
+<!DOCTYPE html>
+<html dir='ltr' lang='en-US' xml:lang='en-US' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr' xmlns:og='http://ogp.me/ns#'>
+<head>
+<link href='https://www.blogger.com/static/v1/widgets/3480144793-css_bundle_v2.css' rel='stylesheet' type='text/css'/>
+<!--[if lt IE 9]> <script async="async" src="http://html5shiv.googlecode.com/svn/trunk/html5.js" ></script> <![endif]-->
+<script async src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script async='async' src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a5cad325aaddf36' type='text/javascript'></script>
+<meta content='ListenData' property='og:site_name'/>
+<meta content='Pandas Python Tutorial - Learn by Examples' property='og:title'/>
+<meta content='https://www.listendata.com/2017/12/python-pandas-tutorial.html' property='og:url'/>
+<meta content='article' property='og:type'/>
+<meta content='https://1.bp.blogspot.com/-lraeOI1CwE0/WkPx7GXrlMI/AAAAAAAAGkY/dMU2LC9kUZMMR8C4ZoKbIbH_VahIba9KACLcBGAs/s72-c/pandas.PNG' property='og:image'/>
+<meta content='10204724803294460' property='fb:admins'/>
+<meta content='1054461654652175' property='fb:app_id'/>
+<meta content='en_US' property='og:locale'/>
+<meta content='en_GB' property='og:locale:alternate'/>
+<link href='https://plus.google.com/+Listendata' rel='publisher'/>
+<meta content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1' name='viewport'/>
+<meta content='text/html;charset=UTF-8' http-equiv='Content-Type'/>
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'/>
+<meta content='CE34D0D68A93442C0826CBAD63B98E2C' name='msvalidate.01'/>
+<meta content='english' name='language'/>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<meta content='blogger' name='generator'/>
+<link href='https://www.listendata.com/favicon.ico' rel='icon' type='image/x-icon'/>
+<link href='https://www.listendata.com/2017/12/python-pandas-tutorial.html' rel='canonical'/>
+<link rel="alternate" type="application/atom+xml" title="ListenData - Atom" href="https://www.listendata.com/feeds/posts/default" />
+<link rel="alternate" type="application/rss+xml" title="ListenData - RSS" href="https://www.listendata.com/feeds/posts/default?alt=rss" />
+<link rel="service.post" type="application/atom+xml" title="ListenData - Atom" href="https://www.blogger.com/feeds/7958828565254404797/posts/default" />
+
+<link rel="alternate" type="application/atom+xml" title="ListenData - Atom" href="https://www.listendata.com/feeds/6410692069216731624/comments/default" />
+<!--[if IE]><script type="text/javascript" src="https://www.blogger.com/static/v1/jsbin/3762807459-ieretrofit.js"></script>
+<![endif]-->
+<link href='https://1.bp.blogspot.com/-lraeOI1CwE0/WkPx7GXrlMI/AAAAAAAAGkY/dMU2LC9kUZMMR8C4ZoKbIbH_VahIba9KACLcBGAs/s1600/pandas.PNG' rel='image_src'/>
+<meta content='Python Pandas Tutorial for Beginners  - Step by step guide to learn data analysis using python and pandas package with examples to handle and manipulate data' name='description'/>
+<meta content='https://www.listendata.com/2017/12/python-pandas-tutorial.html' property='og:url'/>
+<meta content='Pandas Python Tutorial - Learn by Examples' property='og:title'/>
+<meta content='Python Pandas Tutorial for Beginners  - Step by step guide to learn data analysis using python and pandas package with examples to handle and manipulate data' property='og:description'/>
+<meta content='https://1.bp.blogspot.com/-lraeOI1CwE0/WkPx7GXrlMI/AAAAAAAAGkY/dMU2LC9kUZMMR8C4ZoKbIbH_VahIba9KACLcBGAs/w1200-h630-p-k-no-nu/pandas.PNG' property='og:image'/>
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+<title>Pandas Python Tutorial - Learn by Examples</title>
+<style type='text/css'>@font-face{font-family:'Oswald';font-style:normal;font-weight:400;src:local('Oswald Regular'),local('Oswald-Regular'),url(//fonts.gstatic.com/s/oswald/v16/TK3iWkUHHAIjg752GT8D.ttf)format('truetype');}</style>
+<style id='page-skin-1' type='text/css'><!--
+/*<Variable name="keycolor" description="Main Color" type="color" default="#66bbdd"/><Group description="Main Backgrounds" selector=".body-fauxcolumns-outer"><Variable name="body.background.color" description="Outer Background" type="color" default="#5A5955"/><Variable name="wrapper.background.color" description="Main Background" type="color" default="#ffffff"/></Group><Variable name="body.background" description="Body Background" type="background" color="#5A5955" default="$(color) none repeat scroll top left"/><Variable name="body.background.override" description="Body Background Override" type="string" default=""/><Group description="Page Text" selector="body"><Variable name="body.font" description="Font" type="font" default="normal normal 13px Arial, sans-serif"/><Variable name="body.text.color" description="Main Text Color" type="color" default="#666666"/><Variable name="footer.text.color" description="Footer Text Color" type="color" default="#ffffff"/></Group><Group description="Links" selector=".main-outer"><Variable name="link.color" description="Link Color" type="color" default="#0099cc"/><Variable name="link.visited.color" description="Visited Color" type="color" default="#0099cc"/><Variable name="link.hover.color" description="Hover Color" type="color" default="#006c8e"/></Group><Group description="Blog Title" selector=".header h1.title, .header p.title"><Variable name="header.font" description="Font" type="font" default="normal normal 24px Oswald, Arial, sans-serif"/><Variable name="header.text.color" description="Title Color" type="color" default="#333333"/></Group><Group description="Blog Description" selector=".header .description"><Variable name="description.text.color" description="Description Color" type="color" default="#555555"/></Group><Group description="Post Title" selector="h2.post-title, .comments h4, h1.post-title"><Variable name="post.title.font" description="Font" type="font" default="normal normal 18px Oswald, Arial, sans-serif"/><Variable name="post.title.color" description="Text Color" type="color" default="#0099cc"/></Group><Group description="Gadgets" selector=".sidebar h2"><Variable name="widget.title.background.color" description="Background Color" type="color" default="#333333"/><Variable name="widget.title.font" description="Title Font" type="font" default="normal normal 12px Oswald, Arial, sans-serif"/><Variable name="widget.title.text.color" description="Title Color" type="color" default="#ffffff"/><Variable name="widget.alternate.text.color" description="Alternate Color" type="color" default="#999999"/></Group><Group description="Post Footer" selector=".post-footer"><Variable name="post.footer.background.color" description="Background Color" type="color" default="transparent"/><Variable name="post.footer.text.color" description="Text Color" type="color" default="#666666"/><Variable name="post.footer.border.color" description="Border Color" type="color" default="#eeeeee"/></Group><Group description="Secondary Navigation Menu" selector=".nav-2"><Variable name="secondary.navigation.background.color" description="Background Color" type="color" default="#333333"/><Variable name="secondary.navigation.text.color" description="Text Color" type="color" default="#ffffff"/><Variable name="secondary.navigation.hover.color" description="Hover Color" type="color" default="#000000"/></Group><Group description="Primary Navigation Menu" selector="#primary-menu"><Variable name="primary.navigation.background.color" description="Background Color" type="color" default="#333333"/><Variable name="primary.navigation.text.color" description="Text Color" type="color" default="#ffffff"/><Variable name="primary.navigation.hover.color" description="Hover Color" type="color" default="#000000"/></Group><Group description="Footer" selector="#footer-wrapper"><Variable name="footer.color" description="Footer Color" type="color" default="#ffffff"/></Group>*/html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1;display:block}*{margin:0;padding:0}html{display:block}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:&#39;&#39;content:none}table{border-collapse:collapse;border-spacing:0}.navbar,.post-feeds,.feed-links{display:none}.section,.widget{margin:0;padding:0}strong,b{font-weight:bold}cite,em,i{font-style:italic}a:link{color:#0099cc;text-decoration:none;outline:0;transition:all .5s;-moz-transition:all .5s;-webkit-transition:all .5s}a:visited{color:#0099cc;text-decoration:none}a:hover{color:#006c8e;text-decoration:none}a img{border:0;border-width:0;outline:0}abbr,acronym{border-bottom:1px dotted;cursor:help}sup,sub{vertical-align:baseline;position:relative;top:-.4em;font-size:86%}sub{top:.4em}small{font-size:86%}kbd{font-size:80%;border:1px solid #999;padding:2px 5px;border-bottom-width:2px;border-radius:3px}mark{background-color:#ba0000;color:black}p,blockquote,pre,table,figure,hr,form,ol,ul,dl{margin:1.5em 0}hr{height:1px;border:0;background-color:#666}h1,h2,h3,h4,h5,h6{font-weight:bold;line-height:normal;margin:0 0 .6em}h1{font-size:200%}h2{font-size:160%; color: #990000;}h3{font-size:140%;}h4{font-size:120%; color: #990000;}h5{font-size:120%}h6{font-size:100%}ol,ul,dl{margin:.5em 0 .5em 3em}ol{list-style:decimal outside}ul{list-style:disc outside}li{margin:.5em 0}dt{font-weight:bold}dd{margin:0 0 .5em 2em}input,button,select,textarea{font:inherit;font-size:100%;line-height:normal;vertical-align:baseline}textarea{display:block;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}pre,code{font-family:&quot;Courier New&quot;,Courier,Monospace;color:inherit}pre{white-space:pre;word-wrap:normal;overflow:auto}blockquote{background:#ffffcc;margin-left:2em;margin-right:2em;border-left:4px solid #cc6600;padding:1em 1em;font-style:italic}blockquote p{margin:0;padding-top:10px}.post-body table[border=&quot;1&quot;] th,.post-body table[border=&quot;1&quot;] td,.post-body table[border=&quot;1&quot;] caption{border:1px solid;padding:.2em .5em;text-align:left;vertical-align:top}.post-body table.tr-caption-container{border:1px solid #ddd}.post-body th{font-weight:bold}.post-body table[border=&quot;1&quot;] caption{border:0;font-style:italic}.post-body table{margin-left: auto;
+margin-right: auto;background:#fafafa}.post-body td,.post-body th{vertical-align:top;text-align:left;font-size:16px;padding:3px 5px;border:1px solid #ddd}.post-body th{background:#ba0000;color:#ffffff}.post-body table.tr-caption-container td{background:#f6f6f6;border:0;padding:8px}.post-body table.tr-caption-container,.post-body table.tr-caption-container img,.post-body img,img{max-width:100%;height:auto}.post-body td.tr-caption{color:#666;font-size:80%;padding:0 8px 8px!important}body#layout #wrapper{padding:0;margin:30px 20px 20px}body#layout .panel{float:left width:88px}.clear{clear:both}.clear:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0}body{background:#5A5955 none repeat scroll top left;margin:0;padding:0;color:#666;font:normal normal 13px Arial,sans-serif;text-align:left}#wrapper{background:#fff;max-width:1050px;margin:20px auto;padding:20px}.toggleMenu1{display:none;background:#2f2e2c;padding:0 15px;height:48px;line-height:48px;color:#000!important}#nav-bar1{font-family:"Oswald",Arial,sans-serif;background:#2f2e2c;height:48px;line-height:48px;text-transform:uppercase}ul.nav-menu1{background:#2f2e2c;list-style:none;margin:0;*zoom:1;float:left}ul.nav-menu1:before,ul.nav-menu1:after{content:" ";display:table}ul.nav-menu1:after{clear:both}ul.nav-menu1 ul{list-style:none;margin:0;width:9em}ul.nav-menu1 li{position:relative;margin:0}ul.nav-menu1>li{float:left}ul.nav-menu1>li>.parent{background-repeat:no-repeat;background-position:right}ul.nav-menu1 li.selected{background:#ba0000}ul.nav-menu1 li:hover>a,#nav a:hover{background:#ba0000}ul.nav-menu1 li ul{position:absolute;left:-9999px}ul.nav-menu1>li.hover>ul{left:0}ul.nav-menu1 li li.hover ul{left:100%;top:0}ul.nav-menu1 a.active{background:#ba0000}ul.nav-menu1 li a{display:block;padding:0 15px;color:#fff;height:48px;line-height:48px}ul.nav-menu1 li li a{display:block;background:#555;position:relative;z-index:100;height:34px;line-height:34px}ul.nav-menu1 li li li a{background:#666;z-index:200}ul.nav-menu1 a:hover,ul.nav-menu1 a.active:hover{background:#222}
+#header-wrapper{margin:0 auto;overflow:hidden}.header{margin:0 0 20px}.header h1.title,.header p.title{font:normal normal 24px "Oswald",Arial,sans-serif;margin:0;text-transform:uppercase;color:#333}.header .description{color:#555}.header a{color:#333}.header a:hover{color:#09c}.toggleMenu{display:block;background:#ba0000;padding:0 15px;height:48px;line-height:48px;color:#fff!important}
+#nav-bar{font-family:"Oswald",Arial,sans-serif;background:#2f2e2c;height:48px;line-height:48px;text-transform:uppercase}ul.nav-menu{background:#2f2e2c;list-style:none;margin:0;*zoom:1;float:left}ul.nav-menu:before,ul.nav-menu:after{content:" ";display:table}ul.nav-menu:after{clear:both}ul.nav-menu ul{list-style:none;margin:0;width:9em}ul.nav-menu li{position:relative;margin:0}ul.nav-menu>li{float:left}ul.nav-menu>li>.parent{background-repeat:no-repeat;background-position:right}ul.nav-menu li.selected{background:#ba0000}ul.nav-menu li:hover>a,#nav a:hover{background:#ba0000}ul.nav-menu li ul{position:absolute;left:-9999px}ul.nav-menu>li.hover>ul{left:0}ul.nav-menu li li.hover ul{left:100%;top:0}ul.nav-menu a.active{background:#ba0000}ul.nav-menu li a{display:block;padding:0 15px;color:#fff;line-height:48px}ul.nav-menu li li a{display:block;width:170px;background:#555;position:relative;z-index:100;height:auto;line-height:34px}ul.nav-menu li li li a{background:#666;z-index:200}ul.nav-menu a:hover,ul.nav-menu a.active:hover{background:#222}#search-form{background:#444;float:right;margin:0}#search-form input#search-box[type="text"]{height:36px;line-height:36px;margin:5px 0 5px 10px;padding:0 10px;width:150px;color:#636363;border:0;text-transform:uppercase}#search-form input#search-button[type="submit"]{background:#ba0000;color:#fff;height:36px;line-height:36px;margin:5px 10px 5px 0;padding:0 10px;border:0;text-transform:uppercase}#search-form input#search-button[type="submit"]:hover{background:#000}#search-form input#search-box[type="text"]:focus{background:#eee;outline:0}#content-wrapper{margin:0 auto;overflow:hidden;word-wrap:break-word}#post-wrapper{float:left;width:65.11627906976%;max-width:750px;margin:0 0 10px;padding:20px 0}.post-container{padding:0 20px 0 0}.breadcrumbs{font-size:12px;color:#666;padding:10px 0;margin:0 0 20px;border-bottom:3px dotted #eee}.post{margin:0 0 20px;padding:0 0 20px;border-bottom:3px dotted #eee;position:relative;min-height:90px}.post-body{font-size:16px;line-height:1.7;text-align:justify} .post-body a:link {text-decoration: underline;}
+.affiliate-box {
+margin:20px 0 15px;
+color: #0099cc; background-color: #d4f4f7;
+font-size: 14px; border: 2px dashed #fff;
+line-height: 14px; padding: 15px;
+overflow:hidden;}
+h2.post-title,.post-snippet,.post-footer{margin-left:210px}h2.post-title,h1.post-title{font:normal normal 18px "Oswald",Arial,sans-serif;text-transform:uppercase}h2.post-title a,h1.post-title a,h2.post-title,h1.post-title{color:#424242}h2.post-title a:hover,h1.post-title a:hover{color:#ba0000}.img-thumbnail{background:#FFF;float:left;margin:0 10px 5px 0;padding:6px;border:1px solid #e5e5e5}.img-thumbnail img{width:222px;min-height:145px}a.readmore{float:right;background:#ba0000;display:inline-block;padding:6px 7px;margin:15px 0 0 0;color:#fff;font-size:11px}a.readmore:hover{background:#333}a.recent-post-newer-link,a.recent-post-older-link{float:right;font:normal normal 12px Oswald, Arial, sans-serif;padding:4px 8px;display:inline-block;background:#ba0000;color:#fff;text-transform:uppercase}a.recent-post-newer-link{margin-right:5px}a.recent-post-newer-link:hover,a.recent-post-older-link:hover{background:#333}a.mobile-recent-post-newer-link,a.mobile-recent-post-older-link{float:right;font-size:13px;padding:4px 8px;display:inline-block;background:#ba0000;color:#fff;text-transform:uppercase}a.mobile-recent-post-newer-link{margin-right:5px}.post-footer{background:#fdfdfd;color:#666;padding:5px;margin-bottom:5px;font-size:12px}.postthumb{transition:all .4s;-moz-transition:all .4s;-webkit-transition:all .4s;-o-transition:all .4s;margin:3px 10px 3px 0;float:left;width:80px;height:80px;border:4px solid #ddd}.postthumb:hover{opacity:.6;border:4px solid #eee}.admin-meta,.comment-meta,.date-meta,.label-meta{background-image:url(
+https://1.bp.blogspot.com/-LXxSAQZCX6w/WpEhqZ9diEI/AAAAAAAAGvc/MntFwJUR-ywpiudMjG0uZfQQw9fLZq4qgCLcBGAs/s1600/csg-542f92beb36dc.png);background-repeat:no-repeat;margin-right:8px;padding-left:16px;display:inline-block}.post-footer a{color:#888}.post-footer a:hover{color:#09c}.admin-meta{background-position:0 0;height:12px}.comment-meta{background-position:0 -22px;height:12px}.date-meta{background-position:0 -44px;height:12px}.label-meta{background-position:0 -66px;height:12px}.author-profile{background:#edeff1;padding:15px;margin:15px 0;overflow:hidden}.author-profile img{border:1px solid #efefef;float:left;margin-right:6px}.author-profile a.g-profile{font-weight:bold}#blog-pager{display:none}
+.first-recent-post-title{background:#FFF;margin-right:10px;margin-bottom:10px}
+.recent-post-title{background:#eee;margin-bottom:10px}
+.first-recent-post-title p{
+font:normal normal 12px Oswald, Arial, sans-serif;
+font-size:16px;
+margin:0 0 0 0;
+padding:4px 8px;
+display:inline-block;
+background:#BA0000;
+color:#fff;
+text-transform:uppercase;
+border:1px solid #fff;}
+.recent-post-title p{font:normal normal 12px Oswald, Arial, sans-serif;margin:0;padding:4px 8px;display:inline-block;background:#ba0000;color:#fff;text-transform:uppercase}.recent-post-title a{color:#fff}#sidebar-wrapper{float:right;width:34.88372093023256%;max-width:300px;margin:0 auto;padding:20px 0}.sidebar-container{padding:0}
+.sidebar h2,.panel p{font:normal normal 16px "Oswald",Arial,sans-serif;text-transform:uppercase;background:#BA0000;
+color:#fff;margin:0 0 10px 0;padding:6px 8px}.sidebar .widget-content{padding:0 0 20px}
+.sidebar ul,.sidebar ol{font-size:15px; margin:0 0 15px 0; padding:6px 18px}.sidebar li{margin:0; padding:2px}.set,.panel{margin:0}.tabs .panel{padding:0}.set .tabs
+.widget ul{padding:0;list-style:none}.set .tabs .widget li{margin:0;padding:.25em 0;float:none}.tabs-menu{border-bottom:3px solid #ba0000;padding:0;margin:0}.tabs-menu li{font:normal normal 12px "Oswald",Arial,sans-serif;display:inline-block;*display:inline;zoom:1;margin:0 3px -1px 0;padding:8px 12px;background-color:#edeff1;cursor:pointer;position:relative;text-transform:uppercase}.tabs-menu .active-tab{background-color:#ba0000;color:#fff;border-bottom:0;padding-bottom:9px}.tabs-content{padding:15px 0 20px}#footer-wrapper{margin:0 auto;overflow:hidden;padding:20px 0;border-top:3px solid #ba0000}.footer-left{float:left}.footer-right{float:right}.PopularPosts .item-thumbnail{margin:0 6px 0 0;display:inline}.PopularPosts .item-thumbnail a img{height:78px;width:78px;display:block;margin:0;padding:0}.PopularPosts .widget-content ul li{padding:6px 0!important;border-bottom:1px dotted #e2e2e2}.PopularPosts .item-title{font-weight:bold}.PopularPosts .item-snippet{font-size:11px;color:#666}.profile-img{display:inline;opaciry:10;margin:0 6px 3px 0}.label-size-1,.label-size-2,.label-size-3,.label-size-4,.label-size-5{font-size:100%;filter:alpha(100);opacity:10}.cloud-label-widget-content{text-align:left}.label-size{background:#ba0000;display:block;float:left;margin:0 3px 3px 0;color:#fff;font-size:11px;text-transform:uppercase}.label-size a,.label-size span{display:inline-block;color:#fff;padding:6px 8px;font-weight:bold}.label-size:hover{background:#333}
+.label-count{white-space:nowrap;padding-right:3px;margin-left:-3px;background:#ba0000;color:#fff!important}.label-size{line-height:1.2}
+.share-post {
+width : 350px;
+overflow : hidden;
+margin:10px 0px;
+border:0px;
+background: #f4f4f1;
+margin: 0 0 30px 0;
+padding: 10px;
+border: 1px solid #EAEDEF;
+overflow: hidden;
+color: #333333;
+font-size: 14px;
+font-family: Georgia, Tahoma, Verdana;
+line-height: 24px;
+}
+.about-author {
+width : 650px;
+overflow : hidden;
+margin:10px 0px;
+border:0px;
+background: #f2f2ef;
+margin: 0 0 30px 0;
+padding: 10px;
+border: 1px solid #EAEDEF;
+overflow: hidden;
+color: #333333;
+font-size: 14px;
+font-family: Georgia, Tahoma, Verdana;
+line-height: 24px;
+}
+.about-author img {
+display: block;
+width:  120px;
+height: 120px;
+margin: 0 1.2em 0 0;
+float: left;
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center center;
+-webkit-border-radius: 999em;
+-moz-border-radius: 999em;
+border-radius: 999em;
+border: 2px solid #ddd;
+box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+.about-author p {
+padding:10px;
+margin:0px;
+text-align:justify;
+color:#666;
+}
+#bottombar-wrapper ul, .sidebar ul {
+list-style-type:none;
+margin:0 0 0 0;
+padding:0 0 0 0;
+}
+#bottombar-wrapper td, #bottombar-wrapper th, .sidebar td, .sidebar th {vertical-align:center;text-align:left;font-size:13px;padding:0 0 0 0;border:0 none;
+}
+/* BOTTOMBAR WRAPPER */
+#bottombar-wrapper {
+margin:0;
+padding:10px;
+background:#FFF;
+overflow:hidden;
+word-wrap:break-word;
+}
+#bottombar-wrapper h2 {
+font-family:"Oswald",Verdana,Sans-serif;
+font-weight:normal;
+text-transform:uppercase;
+margin:0 0 8px;
+font-size:16px;
+}
+.kiri {
+float:left;
+width:650px;
+margin:0 5px 5px 0;
+border:1px #666;
+}
+.kiri h2 {
+font:normal normal 12px Oswald, Arial, sans-serif;
+margin:0 0 0 0;
+padding:4px 8px;
+display:inline-block;
+background:#BA0000;
+color:#fff;
+text-transform:uppercase;
+border:1px solid #fff;
+}
+.kiri ul, .kiri ol {
+font-size:15px;
+}
+.share-buttons{margin:0;height:67px;float:left}.share-buttons .share{float:left;margin-right:10px;display:inline-block}@media screen and (max-width:1024px){#wrapper{margin:0 auto}}@media screen and (max-width:768px){.active{display:block}ul.nav-menu a.active{background:transparent}#search-form{width:100%;margin:0 0 0 0!important}ul.nav-menu>li{float:none}ul.nav-menu>li>.parent{background-position:95% 50%}ul.nav-menu li li .parent{background-repeat:no-repeat;background-position:95% 50%}ul.nav-menu{float:none;width:100%}ul.nav-menu ul{display:block;width:100%;float:none}ul.nav-menu>li.hover>ul,ul.nav-menu li li.hover ul{position:static}#search-form{background:#666}}@media only screen and (max-width:768px){#wrapper{padding:18px}#post-wrapper,#sidebar-wrapper{float:none;width:100%;max-width:100%}.post-container{padding:0}}
+@media only screen and (max-width:640px){#wrapper{padding:14px}#post-wrapper,#sidebar-wrapper{float:none;width:100%;max-width:100%}.footer-left,.footer-right{float:none;text-align:center}}@media only screen and (max-width:480px){#wrapper{padding:12px}#post-wrapper,#sidebar-wrapper{float:none;width:100%;max-width:100%}h2.post-title,.post-snippet,.post-footer{margin-left:110px}.img-thumbnail{width:110px;height:71px}.img-thumbnail img{width:100px;height:71px}}
+@media screen and (max-width:320px){#wrapper{padding:10px}#post-wrapper,#sidebar-wrapper{float:none;width:100%;max-width:100%}}
+
+--></style>
+<style type='text/css'>
+
+
+.hidden-section-container {
+  background-color:rgba(232, 232, 232, 0.93);
+  box-shadow:0 2px 10px rgba(0,0,0,0.2);
+}
+ 
+.sh-section-btn {
+  font-size:18px;
+  color:#000;
+  padding:5px 10px;
+  cursor:pointer;
+}
+ 
+.h-section-cont {
+ padding:10px 10px;
+ background-color:#fff; 
+ display:none;
+}
+
+
+pre {font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; 
+                color: #444; background-color: #fafafa;
+                font-size: 13px; border: 1px solid #999999;
+                line-height: 14px; padding: 5px; 
+                overflow: auto; width: 100%; 
+			    white-space: pre-wrap;
+}
+
+
+code {color: #444; background-color: #f2f2f2; border: 1px solid #999999;
+                 padding: 3px; font-weight:600; margin-right : 5px;
+}
+
+
+.content-box-gray .content {
+    overflow: hidden;
+    padding: 10px;
+    font-size: 16px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 1px solid gray;
+    color: #444;
+}
+.content-box-gray .title {
+    height:auto;
+    line-height:30px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background:#990000;
+    font-size:18px;
+    font-weight:bold;
+    font-family:verdana;
+    display:block;
+    color:white;
+    display:block;
+    padding:10px;
+    border: 1px solid gray;
+    border-bottom:none;
+}
+
+#fdw-pricing-table {
+  margin:0 auto;
+  text-align: center;
+  width: 928px; /* total computed width */
+  zoom: 1;
+ }
+
+ #fdw-pricing-table:before, #fdw-pricing-table:after {
+   content: "";
+   display: table
+ }
+
+ #fdw-pricing-table:after {
+   clear: both
+ }
+
+ /* --------------- */ 
+#w-pricing-table {
+  margin:0 auto;
+  text-align: center;
+  width: 928px; /* total computed width */
+  zoom: 1;
+ }
+
+ #w-pricing-table:before, #w-pricing-table:after {
+   content: "";
+   display: table
+ }
+
+ #w-pricing-table:after {
+   clear: both
+ }
+
+
+ #w-pricing-table .plan {
+  font: 13px 'Lucida Sans', 'trebuchet MS', Arial, Helvetica;     
+  background: #fff;      
+  border: 1px solid #ddd;
+  color: #333;
+  padding: 20px;
+  width: 250px;
+  float: left;
+  _display: inline; /* IE6 double margin fix */
+  position: relative;
+  margin: 0 5px;
+  -moz-box-shadow: 0 2px 2px -1px rgba(0,0,0,.3);
+  -webkit-box-shadow: 0 2px 2px -1px rgba(0,0,0,.3);
+  box-shadow: 0 2px 2px -1px rgba(0,0,0,.3);  
+ }
+
+ #w-pricing-table .plan:after {
+   z-index: -1; 
+   position: absolute; 
+   content: "";
+   bottom: 10px;
+   right: 4px;
+   width: 80%; 
+   top: 80%; 
+   -webkit-box-shadow: 0 12px 5px rgba(0, 0, 0, .3);   
+   -moz-box-shadow: 0 12px 5px rgba(0, 0, 0, .3);
+   box-shadow: 0 12px 5px rgba(0, 0, 0, .3);
+   -webkit-transform: rotate(3deg);    
+   -moz-transform: rotate(3deg);   
+   -o-transform: rotate(3deg);
+   -ms-transform: rotate(3deg);
+   transform: rotate(3deg); 
+ } 
+
+ #w-pricing-table .header {
+  font-size: 18px;
+  font-weight: normal;
+  border-bottom: 3px solid;
+ }
+
+ #w-pricing-table .header:after {
+  position: absolute;
+  bottom: -8px; left: 0;
+  height: 3px; width: 100%;
+  content: '';
+ }
+
+
+ #w-pricing-table .price{
+  font-size: 25px;
+ }
+
+ #w-pricing-table .monthly{
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #666;
+ }
+
+
+ #fdw-pricing-table .plan {
+  font: 13px 'Lucida Sans', 'trebuchet MS', Arial, Helvetica;     
+  background: #fff;      
+  border: 1px solid #ddd;
+  color: #333;
+  padding: 20px;
+  width: 180px;
+  float: left;
+  _display: inline; /* IE6 double margin fix */
+  position: relative;
+  margin: 0 5px;
+  -moz-box-shadow: 0 2px 2px -1px rgba(0,0,0,.3);
+  -webkit-box-shadow: 0 2px 2px -1px rgba(0,0,0,.3);
+  box-shadow: 0 2px 2px -1px rgba(0,0,0,.3);  
+ }
+
+ #fdw-pricing-table .plan:after {
+   z-index: -1; 
+   position: absolute; 
+   content: "";
+   bottom: 10px;
+   right: 4px;
+   width: 80%; 
+   top: 80%; 
+   -webkit-box-shadow: 0 12px 5px rgba(0, 0, 0, .3);   
+   -moz-box-shadow: 0 12px 5px rgba(0, 0, 0, .3);
+   box-shadow: 0 12px 5px rgba(0, 0, 0, .3);
+   -webkit-transform: rotate(3deg);    
+   -moz-transform: rotate(3deg);   
+   -o-transform: rotate(3deg);
+   -ms-transform: rotate(3deg);
+   transform: rotate(3deg); 
+ } 
+ 
+ 
+ /* --------------- */ 
+
+ #fdw-pricing-table .header {
+  font-size: 18px;
+  font-weight: normal;
+  border-bottom: 3px solid;
+ }
+
+ #fdw-pricing-table .header:after {
+  position: absolute;
+  bottom: -8px; left: 0;
+  height: 3px; width: 100%;
+  content: '';
+ }
+ 
+ 
+ #fdw-pricing-table .plan1 .header{
+  border-bottom-color: #B3E03F;
+ }
+
+ #fdw-pricing-table .plan2 .header{
+  border-bottom-color: #7BD553;
+ }
+
+ #fdw-pricing-table .plan3 .header{
+  border-bottom-color: #3AD5A0;
+ }
+
+ #w-pricing-table .plan4 .header{
+  border-bottom-color: #990000;
+ }   
+ 
+ /* --------------- */
+
+ #fdw-pricing-table .price{
+  font-size: 25px;
+ }
+
+ #fdw-pricing-table .monthly{
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #666;
+ }
+
+ /* --------------- */
+
+ #fdw-pricing-table ul {
+  margin: 20px 0;
+  padding: 0;
+  list-style: none;
+ }
+
+ #fdw-pricing-table li {
+  padding: 10px 0;
+ }
+ 
+ /* --------------- */
+  
+ #fdw-pricing-table .signup {
+  position: relative;
+  padding: 10px 20px;
+  color: #fff;
+  font: bold 15px Arial, Helvetica;
+  text-decoration: none;
+  display: inline-block;       
+  background-color: #72ce3f;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;     
+  text-shadow: 0 -1px 0 rgba(0,0,0,.15);
+  opacity: .9;       
+ }
+
+ #fdw-pricing-table .signup:hover {
+  opacity: 1;       
+ }
+
+ #fdw-pricing-table .signup:active {
+  -moz-box-shadow: 0 2px 2px rgba(0,0,0,.3) inset;
+  -webkit-box-shadow: 0 2px 2px rgba(0,0,0,.3) inset;
+  box-shadow: 0 2px 2px rgba(0,0,0,.3) inset;       
+ }   
+
+ #fdw-pricing-table .plan1 .signup{
+  background: #B3E03F;
+ }
+
+ #fdw-pricing-table .plan2 .signup{
+  background: #7BD553;
+ }
+
+ #fdw-pricing-table .plan3 .signup{
+  background: #3AD5A0;
+ }
+
+ #w-pricing-table .plan4 .signup{
+ font-size: 16px;
+ font-weight: bold;
+ }
+ 
+@media only screen and (max-width: 600px) {
+    #fdw-pricing-table {
+        width: 100%;
+    }
+}
+
+.navigation {
+  width: 300px;
+}
+
+.mainmenu, .submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mainmenu a {
+  display: block;
+  background-color: #CCC;
+  text-decoration: none;
+  padding: 10px;
+  color: #000;
+}
+
+.mainmenu a:hover {
+    background-color: #C5C5C5;
+}
+
+.mainmenu li:hover .submenu {
+  display: block;
+  max-height: 200px;
+}
+
+.submenu a {
+  background-color: #999;
+}
+
+/* hover behaviour for links inside .submenu */
+.submenu a:hover {
+  background-color: #666;
+}
+
+.submenu {
+  overflow: hidden;
+  max-height: 0;
+  -webkit-transition: all 0.5s ease-out;
+}
+</style>
+<style type='text/css'>#related-post{margin:20px 0 30px}#related-post h3{font-family:"Oswald",Arial,sans-serif;text-transform:uppercase;color:#555;font-size:16px;font-weight:normal;padding:0 0 8px;margin:0}#related-post ul{margin-left:0}</style>
+<script>var relatedTitles=new Array();var relatedTitlesNum=0;var relatedUrls=new Array();function related_results_labels(c){for(var b=0;b<c.feed.entry.length;b++){var d=c.feed.entry[b];relatedTitles[relatedTitlesNum]=d.title.$t;for(var a=0;a<d.link.length;a++){if(d.link[a].rel=="alternate"){relatedUrls[relatedTitlesNum]=d.link[a].href;relatedTitlesNum++;break}}}}function removeRelatedDuplicates(){var b=new Array(0);var c=new Array(0);for(var a=0;a<relatedUrls.length;a++){if(!contains(b,relatedUrls[a])){b.length+=1;b[b.length-1]=relatedUrls[a];c.length+=1;c[c.length-1]=relatedTitles[a]}}relatedTitles=c;relatedUrls=b}function contains(b,d){for(var c=0;c<b.length;c++){if(b[c]==d){return true}}return false}function printRelatedLabels(){var b=Math.floor((relatedTitles.length-1)*Math.random());var a=0;document.write("<ul>");while(a<relatedTitles.length&&a<20){document.write('<li><a href="'+relatedUrls[b]+'">'+relatedTitles[b]+"</a></li>");if(b<relatedTitles.length-1){b++}else{b=0}a++}document.write("</ul>");document.write()} </script>
+<style type='text/css'>.comment-form{overflow:hidden}.comments h3{font-family:"Oswald",arial,sans-serif;line-height:16px;text-transform:uppercase;font-weight:normal;color:#666;margin:0 0 20px 0;font-size:16px;padding:0}h4#comment-post-message{display:none;margin:0}.comments{clear:both;margin-top:10px;margin-bottom:0}.comments .comments-content{font-size:13px;margin-bottom:8px}.comments .comments-content .comment-thread ol{text-align:left;margin:13px 0;padding:0}.comments .avatar-image-container{background:#edeff1;overflow:hidden;padding:6px}.comments .comment-block{position:relative;background:#edeff1;padding:15px;margin-left:60px}.comments .comment-block:before{content:"";width:0;height:0;position:absolute;right:100%;top:15px;border-width:10px;border-style:solid;border-color:transparent #edeff1 transparent transparent;display:block}.comments .comments-content .comment-replies{margin:8px 0;margin-left:60px}.comments .comments-content .comment-thread:empty{display:none}.comments .comment-replybox-single{background:#ced3d9;padding:0;margin:8px 0;margin-left:60px}.comments .comment-replybox-thread{background:#edeff1;margin:8px 0 0 0;padding:0}.blogger-iframe-colorize{display:block!important}.comments .comments-content .comment{margin-bottom:6px;padding:0}.comments .comments-content .comment:first-child{padding:0;margin:0}.comments .comments-content .comment:last-child{padding:0;margin:0}.comments .comment-thread.inline-thread .comment,.comments .comment-thread.inline-thread .comment:last-child{margin:0 0 5px 30%}.comment .comment-thread.inline-thread .comment:nth-child(6){margin:0 0 5px 25%}.comment .comment-thread.inline-thread .comment:nth-child(5){margin:0 0 5px 20%}.comment .comment-thread.inline-thread .comment:nth-child(4){margin:0 0 5px 15%}.comment .comment-thread.inline-thread .comment:nth-child(3){margin:0 0 5px 10%}.comment .comment-thread.inline-thread .comment:nth-child(2){margin:0 0 5px 5%}.comment .comment-thread.inline-thread .comment:nth-child(1){margin:0 0 5px 0}.comments .comments-content .comment-thread{margin:0;padding:0}.comments .comments-content .inline-thread{padding:10px 0;margin:0}.comments .comments-content .icon.blog-author{position:absolute;top:-2px;right:-2px;margin:0;background-image:url(https://1.bp.blogspot.com/-o6Tdk7WBxk8/WpEhtNhV6QI/AAAAAAAAGvg/bqC6omQilrYamiRHSGT07pXz5YfL0ngpQCLcBGAs/s1600/author.png);width:59px;height:43px}.comments .comment .comment-actions a{background:#ba0000;display:inline-block;color:#fff;font-weight:bold;font-size:10px;line-height:15px;padding:4px 8px;margin:4px 8px 0 0}.comments .comment .comment-actions a:hover,.comments .continue a:hover{text-decoration:none;background:#333}.comments .continue a{background:#ba0000;color:#fff;display:inline-block;padding:4px 8px;font-size:10px}.pesan-komentar{background:#666;position:relative;color:#fff;padding:10px 20px;margin:8px}.pesan-komentar p{line-height:normal;margin:0}.pesan-komentar:before{content:"";width:0;height:0;position:absolute;top:100%;left:30px;border-width:10px;border-style:solid;border-color:#666 transparent transparent transparent;display:block}</style>
+<style>.post-footer{margin-left:0!important;margin-bottom:20px!important}</style>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'/>
+<script type='text/javascript'>
+//<![CDATA[
+function bp_thumbnail_resize(image_url,blog_title)
+{
+var image_width=200;
+var image_height=130;
+image_tag='<img width="'+image_width+'" height="'+image_height+'" src="'+image_url.replace('/s72-c/','/w'+image_width+'-h'+image_height+'-c/')+'" alt="'+blog_title+'" title="'+blog_title+'"/>';
+if(image_url!="") return image_tag;
+else return "";
+}
+//]]>
+</script>
+<script type='text/javascript'>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-76384860-1', 'auto', 'blogger');
+        ga('blogger.send', 'pageview');
+      </script>
+<style>
+.header-left{
+display: inline-block;
+float: left;
+}
+#header-right {
+display:inline-block;
+float:right;
+margin-top: 10px;
+margin-right: 0px;
+}
+</style>
+<script type='text/javascript'>
+//<![CDATA[
+function loadCSS(e, t, n) { "use strict"; var i = window.document.createElement("link"); var o = t || window.document.getElementsByTagName("script")[0]; i.rel = "stylesheet"; i.href = e; i.media = "only x"; o.parentNode.insertBefore(i, o); setTimeout(function () { i.media = n || "all" }) }
+loadCSS("https://fonts.googleapis.com/css?family=Oswald");
+//]]>
+</script>
+<link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=7958828565254404797&amp;zx=08e8574e-a011-450e-97f2-1a8765f3ed15' media='none' onload='if(media!=&#39;all&#39;)media=&#39;all&#39;' rel='stylesheet'/><noscript><link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=7958828565254404797&amp;zx=08e8574e-a011-450e-97f2-1a8765f3ed15' rel='stylesheet'/></noscript>
+
+</head>
+<body class='loading'>
+<div class='navbar section' id='navbar'><div class='widget Navbar' data-version='1' id='Navbar1'><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener('load',
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<div id="navbar-iframe-container"></div>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript">
+      gapi.load("gapi.iframes:gapi.iframes.style.bubble", function() {
+        if (gapi.iframes && gapi.iframes.getContext) {
+          gapi.iframes.getContext().openChild({
+              url: 'https://www.blogger.com/navbar.g?targetBlogID\x3d7958828565254404797\x26blogName\x3dListenData\x26publishMode\x3dPUBLISH_MODE_HOSTED\x26navbarType\x3dLIGHT\x26layoutType\x3dLAYOUTS\x26searchRoot\x3dhttps://www.listendata.com/search\x26blogLocale\x3den_GB\x26v\x3d2\x26homepageUrl\x3dhttps://www.listendata.com/\x26targetPostID\x3d6410692069216731624\x26blogPostOrPageUrl\x3dhttps://www.listendata.com/2017/12/python-pandas-tutorial.html\x26vt\x3d1294465175221147014',
+              where: document.getElementById("navbar-iframe-container"),
+              id: "navbar-iframe"
+          });
+        }
+      });
+    </script><script type="text/javascript">
+(function() {
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = '//pagead2.googlesyndication.com/pagead/js/google_top_exp.js';
+var head = document.getElementsByTagName('head')[0];
+if (head) {
+head.appendChild(script);
+}})();
+</script>
+</div></div>
+<div id='wrapper'>
+<nav id='nav-bar1'>
+<a class='toggleMenu1' href='#'>Menu</a>
+<ul class='nav-menu1'>
+<li><a href='https://www.listendata.com/p/about-listen-data.html'>About</a></li>
+<li><a href='https://www.listendata.com/p/site-map.html'>Index</a></li>
+<li><a href='https://www.listendata.com/p/write-for-us.html'>Write For Us</a></li>
+</ul>
+</nav>
+<header id='header-wrapper'>
+<div class='header header-left section' id='header'><div class='widget Header' data-version='1' id='Header1'>
+<div id='header-inner'>
+<a href='https://www.listendata.com/' style='display: block'>
+<img alt='ListenData' height='95px; ' id='Header1_headerimg' src='https://training.listendata.com/wp-content/uploads/2016/03/listendata-logo.png' style='display: block' width='309px; '/>
+</a>
+</div>
+</div></div>
+<!--- <b:if cond='data:blog.pageType == &quot;index&quot; || data:blog.searchQuery'> <b:section class='header-right crosscol' id='header-right' maxwidgets='1' showaddelement='yes'> <b:widget id='HTML2' locked='false' mobile='no' title='' type='HTML' version='1'> <b:widget-settings> <b:widget-setting name='content'>&lt;a href=&#39;http://www.listendata.com/2017/12/predictive-modeling-sas-r-training.html&#39;&gt;&lt;img border=&#39;0&#39; data-original-height=&#39;90&#39; data-original-widh=&#39;728&#39; src=&#39; https://4.bp.blogspot.com/-EodX0JzLRQs/WkZDDAlI0YI/AAAAAAAAGkw/Z7hPy-9smDs6FxOr2id1xps5kt_a_o-_wCLcBGAs/s1600/listendata%2B%25284%2529.png &#39;/&gt; &lt;/a&gt;</b:widget-setting> </b:widget-settings> <b:includable id='main'> <b:if cond='data:blog.url == data:blog.homepageUrl'> <b:if cond='data:title != &quot;&quot;'> <h2 class='title'><data:title/></h2> </b:if> <div class='widget-content'> <data:content/> </div> </b:if> </b:includable> </b:widget> </b:section> </b:if> -->
+<div style='clear:both;'></div>
+<div class='header-cap-bottom cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</header>
+<nav id='nav-bar'>
+<a class='toggleMenu' href='#'>Menu</a>
+<ul class='nav-menu'>
+<li class='selected'><a href='/'>Home</a></li>
+<li>
+<a href='https://www.listendata.com/p/sas-tutorials.html'>
+SAS
+</a>
+<ul>
+<li>
+<a href='https://www.listendata.com/p/sas-tutorials.html'>
+Tutorials
+</a>
+</li>
+<li>
+<a href='https://www.listendata.com/search/label/SAS Certification'>
+SAS Certification
+</a>
+</li>
+<li>
+<a href='https://www.listendata.com/2013/09/sas-interview-questions.html'>
+Interview Questions
+</a>
+</li><li>
+<a href='https://www.listendata.com/p/resume-templates.html'>
+Resumes
+</a>
+</li>
+</ul></li>
+<li>
+<a href='https://www.listendata.com/p/r-programming-tutorials.html'>
+R
+</a>
+</li>
+<li>
+<a href='https://www.listendata.com/search/label/Python'>
+Python
+</a>
+</li>
+<li>
+<a href='https://www.listendata.com/p/statistics-tutorials.html'>
+Data Science
+</a>
+</li>
+<li>
+<a href='https://www.listendata.com/p/proc-sql.html'>
+SQL
+</a>
+</li>
+<li>
+<a href='https://www.listendata.com/p/excel-tutorials.html'>Excel</a>
+<ul>
+<li><a href='https://www.listendata.com/p/excel-for-beginners.html'>Functions</a></li>
+<li>
+<a href='https://www.listendata.com/p/advanced-excel-tutorials.html'>
+Advanced
+</a>
+</li>
+<li>
+<a href='https://www.listendata.com/search/label/Excel%20Charts'>
+ Dashboard / Charts
+</a>
+</li>
+<li>
+<a href='https://www.listendata.com/p/excel-vba-tutorials.html'>
+Macros
+</a>
+</li>
+<li>
+<a href='https://www.listendata.com/p/statistical-analysis-using-excel.html'>
+Statistical Analysis
+</a>
+</li>
+<li>
+<a href='https://www.listendata.com/p/mathematics-with-excel.html'>
+Mathematical Analysis
+</a>
+</li><li>
+<a href='https://www.listendata.com/2014/05/mis-developer-senior-reporting-analyst.html'>
+Resumes
+</a>
+</li>
+</ul>
+</li>
+<li>
+<a href='https://www.listendata.com/p/excel-vba-tutorials.html'>
+VBA
+</a>
+</li>
+<li>
+<a href='https://www.listendata.com/p/spss-tutorials.html'>
+SPSS
+</a>
+</li>
+<li>
+<a href='https://www.listendata.com/search/label/Analytics'>Resources</a>
+</li>
+<li>
+<a href='https://www.listendata.com/search/label/Infographics'>
+Infographics
+</a>
+</li>
+<li>
+<a>
+More
+</a>
+<ul>
+<li>
+<a href='https://analyticshumor.blogspot.in/' target='_blank'>
+Humor
+</a>
+</li>
+<li>
+<a href='https://www.listendata.com/p/blogroll.html'>
+BlogRoll
+</a>
+</li>
+</ul>
+</li>
+</ul>
+<form action='/search' id='search-form' method='get' style='display: inline;'><input id='search-box' name='q' onblur='if(this.value==&#39;&#39;)this.value=this.defaultValue;' onfocus='if(this.value==this.defaultValue)this.value=&#39;&#39;;' type='text' value='Search...' vinput=''/>
+<input id='search-button' type='submit' value='Go'/></form>
+</nav>
+<div class='clear'></div>
+<div id='content-wrapper'>
+<div id='post-wrapper'>
+<div class='post-container'>
+<!--- <div id='bottombar-wrapper'> <b:if cond='data:blog.url == data:blog.homepageUrl'> <b:section class='kiri' id='kiri' preferred='yes'> <b:widget id='HTML4' locked='false' mobile='no' title='Online Courses' type='HTML'> <b:widget-settings> <b:widget-setting name='content'>&lt;style type=&#39;text/css&#39;&gt; #f-pricing-table { margin:0 auto; text-align: center; width: 650px; /* total computed width */ zoom: 1; } #f-pricing-table:before, #f-pricing-table:after { content: &amp;quot;&amp;quot;; display: table } #f-pricing-table:after { clear: both } #f-pricing-table .plan { font: 13px &amp;#39;Lucida Sans&amp;#39;, &amp;#39;trebuchet MS&amp;#39;, Arial, Helvetica; background: #fff; border: 1px solid #ddd; color: #333; padding: 15px; width: 165px; float: left; _display: inline; /* IE6 double margin fix */ position: relative; margin: 0 5px; -moz-box-shadow: 0 2px 2px -1px rgba(0,0,0,.3); -webkit-box-shadow: 0 2px 2px -1px rgba(0,0,0,.3); box-shadow: 0 2px 2px -1px rgba(0,0,0,.3); } #f-pricing-table .plan:after { z-index: -1; position: absolute; content: &amp;quot;&amp;quot;; bottom: 10px; right: 4px; width: 80%; top: 80%; -webkit-box-shadow: 0 12px 5px rgba(0, 0, 0, .3); -moz-box-shadow: 0 12px 5px rgba(0, 0, 0, .3); box-shadow: 0 12px 5px rgba(0, 0, 0, .3); -webkit-transform: rotate(3deg); -moz-transform: rotate(3deg); -o-transform: rotate(3deg); -ms-transform: rotate(3deg); transform: rotate(3deg); } #f-pricing-table .header { font-size: 18px; font-weight: normal; border-bottom: 3px solid; } #f-pricing-table .header:after { position: absolute; bottom: -8px; left: 0; height: 3px; width: 100%; content: &amp;#39;&amp;#39;; } #f-pricing-table .plan1 .header{ border-bottom-color: #B3E03F; } #f-pricing-table .plan2 .header{ border-bottom-color: #7BD553; } #f-pricing-table .plan3 .header{ border-bottom-color: #3AD5A0; } #f-pricing-table .plan4 .header{ border-bottom-color: #990000; } #f-pricing-table .price{ font-size: 25px; } #f-pricing-table .monthly{ font-size: 18px; margin-bottom: 20px; text-transform: uppercase; color: #666; } #f-pricing-table ul { margin: 20px 0; padding: 0; list-style: none; } #f-pricing-table li { padding: 10px 0; } #f-pricing-table .signup { position: relative; padding: 10px 20px; color: #fff; font: bold 15px Arial, Helvetica; text-decoration: none; display: inline-block; background-color: #72ce3f; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; text-shadow: 0 -1px 0 rgba(0,0,0,.15); opacity: .9; } #f-pricing-table .signup:hover { opacity: 1; } #f-pricing-table .signup:active { -moz-box-shadow: 0 2px 2px rgba(0,0,0,.3) inset; -webkit-box-shadow: 0 2px 2px rgba(0,0,0,.3) inset; box-shadow: 0 2px 2px rgba(0,0,0,.3) inset; } #f-pricing-table .plan1 .signup{ background: #B3E03F; } #f-pricing-table .plan2 .signup{ background: #7BD553; } #f-pricing-table .plan3 .signup{ background: #3AD5A0; } #f-pricing-table .plan4 .signup{ background: #990000; } @media only screen and (max-width: 600px) { #f-pricing-table { width: 100%; } } &lt;/style&gt; &lt;div id=&quot;f-pricing-table&quot;&gt; &lt;div class=&quot;plan plan1&quot;&gt; &lt;div class=&quot;header&quot;&gt; Practical SAS Programming &lt;/div&gt; &lt;a class=&quot;signup&quot; href=&quot;http://www.listendata.com/2017/12/predictive-modeling-sas-r-training.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt;DETAILS&lt;/a&gt;&lt;br/&gt; &lt;/div&gt; &lt;/div&gt; &lt;div id=&quot;f-pricing-table&quot;&gt; &lt;div class=&quot;plan plan2&quot;&gt; &lt;div class=&quot;header&quot;&gt; Predictive Modeling with SAS&lt;/div&gt; &lt;a class=&quot;signup&quot; href=&quot;http://www.listendata.com/2017/12/predictive-modeling-sas-r-training.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt;DETAILS&lt;/a&gt; &lt;br/&gt; &lt;/div&gt; &lt;/div&gt; &lt;div id=&quot;f-pricing-table&quot;&gt; &lt;div class=&quot;plan plan3&quot;&gt; &lt;div class=&quot;header&quot;&gt; Data Science with R&amp;nbsp;&amp;nbsp;&lt;/div&gt; &lt;a class=&quot;signup&quot; href=&quot;http://www.listendata.com/2017/12/predictive-modeling-sas-r-training.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt;DETAILS&lt;/a&gt; &lt;br/&gt; &lt;/div&gt; &lt;/div&gt;</b:widget-setting> </b:widget-settings> <b:includable id='main'> <b:if cond='data:title != &quot;&quot;'> <h2 class='title'><data:title/></h2> </b:if> <div class='widget-content'> <data:content/> </div> <b:include name='quickedit'/> </b:includable> </b:widget> </b:section> </b:if> </div> -->
+<div class='main section' id='main'><div class='widget Blog' data-version='1' id='Blog1'>
+<div class='breadcrumbs'><span itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a href='https://www.listendata.com/' itemprop='url'><span itemprop='title'>Home</span></a></span> &#187; <span itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a href='https://www.listendata.com/search/label/Pandas?&max-results=8' itemprop='url'><span itemprop='title'>Pandas</span></a></span> &#187; 
+<span itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a href='https://www.listendata.com/search/label/Python?&max-results=8' itemprop='url'><span itemprop='title'>Python</span></a></span>
+ &#187; <span>Pandas Python Tutorial - Learn by Examples</span>
+</div>
+<div class='blog-posts hfeed'>
+<!--Can't find substitution for tag [defaultAdStart]-->
+
+<div class="date-outer">
+
+<div class="date-posts">
+<div class='post-outer'>
+<meta content='summary' name='twitter:card'/>
+<meta content='@ListenData' name='twitter:site'/>
+<meta content='@DeepanshuBhall1' name='twitter:creator'/>
+<meta content='https://www.listendata.com/' name='twitter:domain'/>
+<meta content='https://www.listendata.com/2017/12/python-pandas-tutorial.html' name='twitter:url'/>
+<meta content='Pandas Python Tutorial - Learn by Examples' name='twitter:title'/>
+<meta content='https://1.bp.blogspot.com/-lraeOI1CwE0/WkPx7GXrlMI/AAAAAAAAGkY/dMU2LC9kUZMMR8C4ZoKbIbH_VahIba9KACLcBGAs/s1600/pandas.PNG' name='twitter:image:src'/>
+<meta content='Python Pandas Tutorial for Beginners  - Step by step guide to learn data analysis using python and pandas package with examples to handle and manipulate data' name='twitter:description'/>
+<meta content='https://www.listendata.com/2017/12/python-pandas-tutorial.html' name='twitter:url'/>
+<div class='post hentry uncustomized-post-template' itemscope='itemscope' itemtype='https://schema.org/BlogPosting'>
+<meta itemType='https://schema.org/WebPage' itemid='https://www.listendata.com/2017/12/python-pandas-tutorial.html' itemprop='mainEntityOfPage' itemscope='itemscope'/>
+<meta content='https://1.bp.blogspot.com/-lraeOI1CwE0/WkPx7GXrlMI/AAAAAAAAGkY/dMU2LC9kUZMMR8C4ZoKbIbH_VahIba9KACLcBGAs/s1600/pandas.PNG' itemprop='image'/>
+<a name='6410692069216731624'></a>
+<h1 class='post-title entry-title' itemprop='headline'>
+Pandas Python Tutorial - Learn by Examples
+</h1>
+<div class='post-footer'>
+<span class='admin-meta vcard'>
+<span class='fn' itemprop='author' itemscope='itemscope' itemtype='https://schema.org/Person'>
+<meta content='https://www.blogger.com/profile/14025835305855193383' itemprop='url'/>
+<a href='https://plus.google.com/u/0/105139958825007483111' rel='author' target='_blank' title='author profile'>
+<span itemprop='name'>Ekta Aggarwal</span>
+</a>
+</span>
+</span>
+<span class='comment-meta'>
+<a href='https://www.listendata.com/2017/12/python-pandas-tutorial.html#comment-form' onclick=''>
+14 Comments 
+</a>
+</span>
+<span class='label-meta'>
+<a href='https://www.listendata.com/search/label/Pandas' rel='tag'>Pandas</a>,
+<a href='https://www.listendata.com/search/label/Python' rel='tag'>Python</a>
+</span>
+</div>
+<div class='post-body entry-content' id='post-body-6410692069216731624' itemprop='description articleBody'>
+<div id='adsense-target'>
+<div dir="ltr" style="text-align: left;" trbidi="on">
+Pandas being one of the most popular package in Python is widely used for data manipulation. It is a very powerful and versatile package which makes data cleaning and wrangling much easier and pleasant.<br />
+<div>
+<br /></div>
+<div>
+The Pandas library has a great contribution to the python community and it makes python as one of the top programming language for data science and analytics. It has become first choice of data analysts and scientists for data analysis and manipulation.<br />
+<br />
+<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody>
+<tr><td style="text-align: center;"><a href="https://1.bp.blogspot.com/-lraeOI1CwE0/WkPx7GXrlMI/AAAAAAAAGkY/dMU2LC9kUZMMR8C4ZoKbIbH_VahIba9KACLcBGAs/s1600/pandas.PNG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" data-original-height="229" data-original-width="462" src="https://1.bp.blogspot.com/-lraeOI1CwE0/WkPx7GXrlMI/AAAAAAAAGkY/dMU2LC9kUZMMR8C4ZoKbIbH_VahIba9KACLcBGAs/s1600/pandas.PNG" /></a></td></tr>
+<tr><td class="tr-caption" style="text-align: center;">Data Analysis with Python : Pandas Step by Step Guide</td></tr>
+</tbody></table>
+</div>
+<div>
+<br />
+<b><span style="color: #990000; font-size: x-large;">Why pandas?</span></b><br />
+It has many functions which are the essence for data handling. In short, it can perform the following tasks for you -<br />
+<ol style="text-align: left;">
+<li>Create a structured data set similar to R's data frame and Excel spreadsheet.</li>
+<li>Reading data from various sources such as CSV, TXT, XLSX, SQL database, R etc.</li>
+<li>Selecting particular rows or columns from data set</li>
+<li>Arranging data in ascending or descending order</li>
+<li>Filtering data based on some conditions</li>
+<li>Summarizing data by classification variable</li>
+<li>Reshape data into wide or long format</li>
+<li>Time series analysis</li>
+<li>Merging and concatenating two datasets</li>
+<li>Iterate over the rows of dataset</li>
+<li>Writing or Exporting data in CSV or Excel format</li>
+</ol>
+<br />
+<b><span style="color: #990000; font-size: x-large;">Datasets:</span></b><br />
+<br />
+In this tutorial we will use two datasets: <b>'income' </b>and<b> 'iris'</b>.<br />
+<ol style="text-align: left;">
+<li><b>'income' data </b>: This data contains the income of various states from 2002 to 2015. The dataset contains 51 observations and 16 variables. <a href="https://sites.google.com/site/pocketecoworld/income.csv" rel="nofollow" target="_blank"><b>Download link</b></a></li>
+<li><b>'iris' data</b>: It comprises of 150 observations with 5 variables. We have 3 species of flowers(50 flowers for each specie) and for all of them the sepal length and width and petal length and width are given. <b><a href="https://sites.google.com/site/pocketecoworld/iris.csv" rel="nofollow" target="_blank">Download link</a></b>&nbsp;</li>
+</ol>
+<br />
+<br />
+<b><span style="color: #990000; font-size: x-large;">Important pandas functions to remember</span></b><br />
+<br />
+The following is a list of common tasks along with pandas functions.<br />
+<table>
+  <tbody>
+<tr>
+    <th>Utility</th>
+    <th>Functions</th>
+  </tr>
+<tr>
+    <td>Extract Column Names</td>
+    <td>df.columns</td>
+  </tr>
+<tr>
+    <td>Select first 2 rows</td>
+    <td>df.iloc[:2]</td>
+  </tr>
+<tr>
+    <td>Select first 2 columns</td>
+    <td>df.iloc[:,:2]</td>
+  </tr>
+<tr>
+    <td>Select columns by name</td>
+    <td>df.loc[:,["col1","col2"]]</td>
+  </tr>
+<tr>
+    <td>Select random no. of rows</td>
+    <td>df.sample(n = 10)</td>
+  </tr>
+<tr>
+    <td>Select fraction of random rows</td>
+    <td>df.sample(frac = 0.2)</td>
+  </tr>
+<tr>
+    <td>Rename the variables</td>
+    <td>df.rename( )</td>
+  </tr>
+<tr>
+    <td>Selecting a column as index</td>
+    <td>df.set_index( )</td>
+  </tr>
+<tr>
+    <td>Removing rows or columns</td>
+    <td>df.drop( )</td>
+  </tr>
+<tr>
+    <td>Sorting values</td>
+    <td>df.sort_values( )</td>
+  </tr>
+<tr>
+    <td>Grouping variables</td>
+    <td>df.groupby( )</td>
+  </tr>
+<tr>
+    <td>Filtering</td>
+    <td>df.query( )</td>
+  </tr>
+<tr>
+    <td>Finding the missing values</td>
+    <td>df.isnull( )</td>
+  </tr>
+<tr>
+    <td>Dropping the missing values</td>
+    <td>df.dropna( )</td>
+  </tr>
+<tr>
+    <td>Removing the duplicates</td>
+    <td>df.drop_duplicates( )</td>
+  </tr>
+<tr>
+    <td>Creating dummies</td>
+    <td>pd.get_dummies( )</td>
+  </tr>
+<tr>
+    <td>Ranking</td>
+    <td>df.rank( )</td>
+  </tr>
+<tr>
+    <td>Cumulative sum</td>
+    <td>df.cumsum( )</td>
+  </tr>
+<tr>
+    <td>Quantiles</td>
+    <td>df.quantile( )</td>
+  </tr>
+<tr>
+    <td>Selecting numeric variables</td>
+    <td>df.select_dtypes( )</td>
+  </tr>
+<tr>
+    <td>Concatenating two dataframes</td>
+    <td>pd.concat()</td>
+  </tr>
+<tr>
+    <td>Merging on basis of common variable</td>
+    <td>pd.merge( )</td>
+  </tr>
+</tbody></table>
+<b><span style="color: #990000; font-size: x-large;"><br /></span></b>
+
+<b><span style="color: #990000; font-size: x-large;">Importing pandas library</span></b><br />
+<br />
+You need to import or load the Pandas library first in order to use it. By "Importing a library", it means loading it into the memory and then you can use it. Run the following code to import pandas library:<br />
+<blockquote class="tr_bq">
+import pandas as pd</blockquote>
+The "pd" is an alias or abbreviation which will be used as a shortcut to access or call pandas functions. To access the functions from pandas library, you just need to type <b>pd.function</b>&nbsp;instead of&nbsp; <b>pandas.function</b> every time you need to apply it.<br />
+<br />
+<b><span style="color: #990000; font-size: x-large;">Importing Dataset</span></b><br />
+<br />
+To read or import data from CSV file, you can use <b>read_csv() function. </b>In the function, you need to specify the file location of your CSV file.<br />
+<blockquote class="tr_bq">
+income = pd.read_csv("C:\\Users\\Hp\\Python\\Basics\\income.csv")</blockquote>
+<pre> Index       State    Y2002    Y2003    Y2004    Y2005    Y2006    Y2007  \
+0     A     Alabama  1296530  1317711  1118631  1492583  1107408  1440134   
+1     A      Alaska  1170302  1960378  1818085  1447852  1861639  1465841   
+2     A     Arizona  1742027  1968140  1377583  1782199  1102568  1109382   
+3     A    Arkansas  1485531  1994927  1119299  1947979  1669191  1801213   
+4     C  California  1685349  1675807  1889570  1480280  1735069  1812546   
+
+     Y2008    Y2009    Y2010    Y2011    Y2012    Y2013    Y2014    Y2015  
+0  1945229  1944173  1237582  1440756  1186741  1852841  1558906  1916661  
+1  1551826  1436541  1629616  1230866  1512804  1985302  1580394  1979143  
+2  1752886  1554330  1300521  1130709  1907284  1363279  1525866  1647724  
+3  1188104  1628980  1669295  1928238  1216675  1591896  1360959  1329341  
+4  1487315  1663809  1624509  1639670  1921845  1156536  1388461  1644607  
+</pre>
+<br />
+<b><span style="color: #990000; font-size: x-large;">Get Variable Names</span></b><br />
+<br />
+By using <code>income.columns</code>command, you can fetch the names of variables of a data frame.</div>
+<pre>Index(['Index', 'State', 'Y2002', 'Y2003', 'Y2004', 'Y2005', 'Y2006', 'Y2007',
+       'Y2008', 'Y2009', 'Y2010', 'Y2011', 'Y2012', 'Y2013', 'Y2014', 'Y2015'],
+      dtype='object')
+</pre>
+<code>income.columns[0:2]</code> returns first two column names 'Index', 'State'. In python, indexing starts from 0.
+<br />
+<br />
+<div>
+<div>
+<b><span style="color: #990000; font-size: x-large;">Knowing the Variable types</span></b><br />
+<br />
+You can use the <b>dataFrameName.dtypes </b>command to extract the information of types of variables stored in the data frame.</div>
+<blockquote class="tr_bq">
+income.dtypes&nbsp;</blockquote>
+<pre>Index    object
+State    object
+Y2002     int64
+Y2003     int64
+Y2004     int64
+Y2005     int64
+Y2006     int64
+Y2007     int64
+Y2008     int64
+Y2009     int64
+Y2010     int64
+Y2011     int64
+Y2012     int64
+Y2013     int64
+Y2014     int64
+Y2015     int64
+dtype: object
+</pre>
+<div>
+<br />
+Here '<b>object</b>' means strings or character variables. '<b>int64</b>' refers to numeric variables (without decimals).<br />
+<br />
+To see the variable type of one variable (let's say "State") instead of all the variables, you can use the command below -<br />
+<blockquote class="tr_bq">
+income['State'].dtypes</blockquote>
+It returns <b>dtype('O'). </b>In this case, 'O' refers to object i.e. type of variable as character.<br />
+<br /></div>
+<div>
+<b><span style="color: #990000;"><span style="font-size: x-large;">Changing the data types</span></span></b></div>
+<div>
+<br />
+Y2008 is an integer. Suppose we want to convert it to <b>float </b>(numeric variable with decimals) we can write:</div>
+<blockquote class="tr_bq">
+income.Y2008 = income.Y2008.astype(float)<br />
+income.dtypes</blockquote>
+<pre>Index     object
+State     object
+Y2002      int64
+Y2003      int64
+Y2004      int64
+Y2005      int64
+Y2006      int64
+Y2007      int64
+Y2008    float64
+Y2009      int64
+Y2010      int64
+Y2011      int64
+Y2012      int64
+Y2013      int64
+Y2014      int64
+Y2015      int64
+dtype: object</pre>
+<br />
+<b><span style="color: #990000; font-size: x-large;">To view the dimensions or shape of the data</span></b><br />
+<blockquote class="tr_bq">
+income.shape</blockquote>
+<pre> (51, 16)
+</pre>
+<br />
+51 is the number of rows and 16 is the number of columns.<br />
+<br />
+You can also use <b>shape[0] </b>to see the number of rows (similar to nrow() in R) and <b>shape[1] </b>for number of columns (similar to ncol() in R).<b>&nbsp;</b><br />
+<blockquote class="tr_bq">
+income.shape[0]<br />
+income.shape[1]</blockquote>
+<br />
+<b><span style="color: #990000; font-size: x-large;">To view only some of the rows</span></b><br />
+<br />
+By default <b>head( ) shows first 5 rows</b>. If we want to see a specific number of rows we can mention it in the parenthesis. Similarly <b>tail( ) function shows last 5 rows by default</b>.<br />
+<blockquote class="tr_bq">
+income.head()<br />
+income.head(2)  #shows first 2 rows.<br />
+income.tail() <br />
+income.tail(2)  #shows last 2 rows</blockquote>
+<b><br /></b>
+Alternatively, any of the following commands can be used to fetch first five rows.<br />
+<code>income[0:5] </code><br />
+<code>income.iloc[0:5]</code><br />
+<br />
+<b><span style="color: #990000; font-size: x-large;">Extract Unique Values</span></b><br />
+<br />
+The<b> unique()</b> function shows the unique levels or categories in the dataset.<br />
+<blockquote class="tr_bq">
+income.Index.unique()</blockquote>
+<pre>array(['A', 'C', 'D', ..., 'U', 'V', 'W'], dtype=object)
+</pre>
+<br />
+<br />
+The <b>nunique( )</b> shows the number of unique values.<br />
+<blockquote class="tr_bq">
+income.Index.nunique()</blockquote>
+It returns 19 as index column contains distinct 19 values.<br />
+<br />
+<b><span style="color: #990000; font-size: x-large;">Generate Cross Tab</span></b><br />
+<br />
+<b>pd.crosstab( )</b> is used to create a bivariate frequency distribution. Here the bivariate frequency distribution is between <b>Index </b>and <b>State </b>columns.<br />
+<blockquote class="tr_bq">
+pd.crosstab(income.Index,income.State)</blockquote>
+<br />
+<b><span style="color: #990000; font-size: x-large;">Creating a frequency distribution</span></b><br />
+<br />
+<b>income.Index</b> selects the 'Index' column of 'income' dataset and <b>value_counts( )</b> creates a frequency distribution. By default <b>ascending = False</b> i.e. it will show the 'Index' having the maximum frequency on the top.<br />
+<blockquote class="tr_bq">
+income.Index.value_counts(ascending = True) </blockquote>
+<pre>F    1
+G    1
+U    1
+L    1
+H    1
+P    1
+R    1
+D    2
+T    2
+S    2
+V    2
+K    2
+O    3
+C    3
+I    4
+W    4
+A    4
+M    8
+N    8
+Name: Index, dtype: int64
+</pre>
+<br />
+<b><span style="color: #990000; font-size: x-large;">To draw the samples</span></b><br />
+<b>income.sample( )</b> is used to draw random samples from the dataset containing all the columns. Here n = 5 depicts we need 5 columns and <b>frac = 0.1 </b>tells that we need 10 percent of the data as my sample.<br />
+<blockquote class="tr_bq">
+income.sample(n = 5)<br />
+income.sample(frac = 0.1)</blockquote>
+<b><span style="color: #990000; font-size: x-large;">Selecting only a few of the columns</span></b><br />
+To select only a specific columns we use either loc[ ] or iloc[ ] commands. The index or columns to be selected are passed as lists. "Index":"Y2008" denotes the that all the columns from Index to Y2008 are to be selected.<br />
+<blockquote class="tr_bq">
+income.loc[:,["Index","State","Y2008"]]<br />
+income.loc[:,"Index":"Y2008"]&nbsp; #Selecting consecutive columns<br />
+#In the above command both Index and Y2008 are included.<br />
+income.iloc[:,0:5]&nbsp; #Columns from 1 to 5 are included. 6th column not included</blockquote>
+</div>
+<div>
+<b>The difference between loc and iloc</b> is that loc requires the column(rows) names to be selected while iloc requires the column(rows) indices (position).<br />
+<br />
+You can also use the following syntax to select specific variables.<br />
+<blockquote class="tr_bq">
+income[["Index","State","Y2008"]]</blockquote>
+<br /></div>
+<div>
+<b><span style="color: #990000; font-size: x-large;">Renaming the variables</span></b></div>
+<div>
+<div>
+We create a dataframe 'data' for information of people and their respective zodiac signs.</div>
+<blockquote class="tr_bq">
+data = pd.DataFrame({"A" : ["John","Mary","Julia","Kenny","Henry"], "B" : ["Libra","Capricorn","Aries","Scorpio","Aquarius"]})<br />
+data&nbsp;</blockquote>
+<pre>       A          B
+0   John      Libra
+1   Mary  Capricorn
+2  Julia      Aries
+3  Kenny    Scorpio
+4  Henry   Aquarius
+</pre>
+<div>
+If all the columns are to be renamed then we can use <b>data.columns</b> and assign the list of new column names.</div>
+<blockquote class="tr_bq">
+#Renaming all the variables.<br />
+data.columns = ['Names','Zodiac Signs']</blockquote>
+<br />
+<pre>   Names Zodiac Signs
+0   John        Libra
+1   Mary    Capricorn
+2  Julia        Aries
+3  Kenny      Scorpio
+4  Henry     Aquarius
+</pre>
+<div>
+If only some of the variables are to be renamed then we can use <b>rename( )</b> function where the new names are passed in the form of a dictionary.<br />
+<blockquote class="tr_bq">
+#Renaming only some of the variables.<br />
+data.rename(columns = {"Names":"Cust_Name"},inplace = True) </blockquote>
+</div>
+<pre>  Cust_Name Zodiac Signs
+0      John        Libra
+1      Mary    Capricorn
+2     Julia        Aries
+3     Kenny      Scorpio
+4     Henry     Aquarius
+</pre>
+<div>
+By default in pandas <b>inplace = False</b> which means that no changes are made in the original dataset. Thus if we wish to alter the original dataset we need to define <b>inplace = True</b>.</div>
+<div>
+<br />
+Suppose we want to replace only a particular character in the list of the column names then we can use <b>str.replace( ) </b>function. For example, renaming the variables which contain "Y" as "Year"</div>
+<blockquote class="tr_bq">
+income.columns = income.columns.str.replace('Y' , 'Year ')<br />
+income.columns</blockquote>
+<pre>Index(['Index', 'State', 'Year 2002', 'Year 2003', 'Year 2004', 'Year 2005',
+       'Year 2006', 'Year 2007', 'Year 2008', 'Year 2009', 'Year 2010',
+       'Year 2011', 'Year 2012', 'Year 2013', 'Year 2014', 'Year 2015'],
+      dtype='object')
+</pre>
+<div>
+<span style="color: #990000; font-size: x-large;"><br /></span></div>
+<div>
+<b><span style="color: #990000; font-size: x-large;">Setting one column in the data frame as the index</span></b></div>
+<div>
+Using <b>set_index("column name")</b> we can set the indices as that column and that column gets removed.</div>
+<blockquote class="tr_bq">
+income.set_index("Index",inplace = True)<br />
+income.head()<br />
+#Note that the indices have changed and Index column is now no more a column<br />
+income.columns<br />
+income.reset_index(inplace = True)<br />
+income.head()</blockquote>
+</div>
+<div>
+<b>reset_index( )</b> tells us that one should use the by default indices.</div>
+<div>
+<b><span style="font-size: x-large;"><br /></span></b></div>
+<div>
+<div>
+<b><span style="color: #990000; font-size: x-large;">Removing the columns and rows</span></b></div>
+<div>
+To drop a column we use<b> drop( )</b> where the first argument is a list of columns to be removed. <br />
+<br />
+By default <code>axis = 0</code> which means the operation should take place horizontally, row wise. To remove a column we need to set <code>axis = 1</code>.</div>
+<blockquote>
+income.drop('Index',axis = 1)<br />
+<br />
+#Alternatively<br />
+income.drop("Index",axis = "columns")<br />
+income.drop(['Index','State'],axis = 1)<br />
+income.drop(0,axis = 0)<br />
+income.drop(0,axis = "index")<br />
+income.drop([0,1,2,3],axis = 0)</blockquote>
+&nbsp;Also inplace = False by default thus no alterations are made in the original dataset.&nbsp; axis = "columns"&nbsp; and axis = "index" means the column and row(index) should be removed respectively.<br />
+<span style="color: #990000;"><br /></span>
+<b><span style="color: #990000; font-size: x-large;">Sorting the data</span></b><br />
+To sort the data <b>sort_values( )</b> function is deployed. By default <b>inplace = False</b> and <b>ascending = True.</b><br />
+<blockquote class="tr_bq">
+income.sort_values("State",ascending = False)<br />
+income.sort_values("State",ascending = False,inplace = True)<br />
+income.Y2006.sort_values()&nbsp;</blockquote>
+We have got duplicated for Index thus we need to sort the dataframe firstly by Index and then for each particular index we sort the values by Y2002<br />
+<blockquote class="tr_bq">
+income.sort_values(["Index","Y2002"])&nbsp;</blockquote>
+<br />
+<b><span style="color: #990000; font-size: x-large;">Create new variables</span></b><br />
+Using<b> eval( )</b> arithmetic operations on various columns can be carried out in a dataset.<br />
+<blockquote class="tr_bq">
+income["difference"] = income.Y2008-income.Y2009<br />
+<br />
+#Alternatively<br />
+income["difference2"] = income.eval("Y2008 - Y2009")<br />
+income.head()</blockquote>
+<pre>  Index       State    Y2002    Y2003    Y2004    Y2005    Y2006    Y2007  \
+0     A     Alabama  1296530  1317711  1118631  1492583  1107408  1440134   
+1     A      Alaska  1170302  1960378  1818085  1447852  1861639  1465841   
+2     A     Arizona  1742027  1968140  1377583  1782199  1102568  1109382   
+3     A    Arkansas  1485531  1994927  1119299  1947979  1669191  1801213   
+4     C  California  1685349  1675807  1889570  1480280  1735069  1812546   
+
+       Y2008    Y2009    Y2010    Y2011    Y2012    Y2013    Y2014    Y2015  \
+0  1945229.0  1944173  1237582  1440756  1186741  1852841  1558906  1916661   
+1  1551826.0  1436541  1629616  1230866  1512804  1985302  1580394  1979143   
+2  1752886.0  1554330  1300521  1130709  1907284  1363279  1525866  1647724   
+3  1188104.0  1628980  1669295  1928238  1216675  1591896  1360959  1329341   
+4  1487315.0  1663809  1624509  1639670  1921845  1156536  1388461  1644607   
+
+   difference  difference2  
+0      1056.0       1056.0  
+1    115285.0     115285.0  
+2    198556.0     198556.0  
+3   -440876.0    -440876.0  
+4   -176494.0    -176494.0  
+</pre>
+<br />
+<blockquote class="tr_bq">
+income.ratio = income.Y2008/income.Y2009</blockquote>
+<b><span style="color: red;">The above command does not work</span></b>, thus to create new columns we need to use square brackets.<br />
+We can also use <b>assign( )</b> function but this command does not make changes in the original data as there is no inplace parameter. Hence we need to save it in a new dataset.<br />
+<blockquote class="tr_bq">
+data = income.assign(ratio = (income.Y2008 / income.Y2009))<br />
+data.head()</blockquote>
+<br />
+<b><span style="color: #990000; font-size: x-large;">Finding Descriptive Statistics</span></b><br />
+<b>describe( )</b> is used to find some statistics like mean,minimum, quartiles etc.<b> for numeric variables.</b><br />
+<blockquote class="tr_bq">
+income.describe() #for numeric variables</blockquote>
+To find the total count, maximum occuring string and its frequency we write <b>include = ['object']</b><br />
+<blockquote class="tr_bq">
+income.describe(include = ['object'])&nbsp; #Only for strings / objects</blockquote>
+Mean, median, maximum and minimum can be obtained for a particular column(s) as:<br />
+<blockquote class="tr_bq">
+income.Y2008.mean()<br />
+income.Y2008.median()<br />
+income.Y2008.min()<br />
+income.loc[:,["Y2002","Y2008"]].max()</blockquote>
+<span style="color: #990000; font-size: x-large;"><br /></span>
+<b><span style="color: #990000; font-size: x-large;">Groupby function</span></b><br />
+To group the data by a categorical variable we use <b>groupby( )</b> function and hence we can do the operations on each category.<br />
+<blockquote class="tr_bq">
+income.groupby("Index").Y2008.min()<br />
+income.groupby("Index")["Y2008","Y2010"].max()</blockquote>
+<b>agg( )</b> function is used to find all the functions for a given variable.<br />
+<blockquote>
+income.groupby("Index").Y2002.agg(["count","min","max","mean"])<br />
+income.groupby("Index")["Y2002","Y2003"].agg(["count","min","max","mean"])</blockquote>
+The following command finds minimum and maximum values for Y2002 and only mean for Y2003<br />
+<blockquote>
+income.groupby("Index").agg({"Y2002": ["min","max"],"Y2003" : "mean"})</blockquote>
+<pre>          Y2002                 Y2003
+           min      max         mean
+Index                               
+A      1170302  1742027  1810289.000
+C      1343824  1685349  1595708.000
+D      1111437  1330403  1631207.000
+F      1964626  1964626  1468852.000
+G      1929009  1929009  1541565.000
+H      1461570  1461570  1200280.000
+I      1353210  1776918  1536164.500
+K      1509054  1813878  1369773.000
+L      1584734  1584734  1110625.000
+M      1221316  1983285  1535717.625
+N      1395149  1885081  1382499.625
+O      1173918  1802132  1569934.000
+P      1320191  1320191  1446723.000
+R      1501744  1501744  1942942.000
+S      1159037  1631522  1477072.000
+T      1520591  1811867  1398343.000
+U      1771096  1771096  1195861.000
+V      1134317  1146902  1498122.500
+W      1677347  1977749  1521118.500
+</pre>
+<br />
+<b><span style="color: #990000; font-size: x-large;">Filtering</span></b><br />
+To <b>filter </b>only those rows which have Index as "A" we write:<br />
+<blockquote class="tr_bq">
+income[income.Index == "A"]<br />
+<br />
+#Alternatively<br />
+income.loc[income.Index == "A",:]</blockquote>
+<pre>  Index     State    Y2002    Y2003    Y2004    Y2005    Y2006    Y2007  \
+0     A   Alabama  1296530  1317711  1118631  1492583  1107408  1440134   
+1     A    Alaska  1170302  1960378  1818085  1447852  1861639  1465841   
+2     A   Arizona  1742027  1968140  1377583  1782199  1102568  1109382   
+3     A  Arkansas  1485531  1994927  1119299  1947979  1669191  1801213   
+
+     Y2008    Y2009    Y2010    Y2011    Y2012    Y2013    Y2014    Y2015  
+0  1945229  1944173  1237582  1440756  1186741  1852841  1558906  1916661  
+1  1551826  1436541  1629616  1230866  1512804  1985302  1580394  1979143  
+2  1752886  1554330  1300521  1130709  1907284  1363279  1525866  1647724  
+3  1188104  1628980  1669295  1928238  1216675  1591896  1360959  1329341  
+</pre>
+To select the States having Index as "A":<br />
+<blockquote class="tr_bq">
+income.loc[income.Index == "A","State"]<br />
+income.loc[income.Index == "A",:].State</blockquote>
+To filter the rows with Index as "A" and income for 2002 &gt; 1500000"<br />
+<blockquote class="tr_bq">
+income.loc[(income.Index == "A") &amp; (income.Y2002 &gt; 1500000),:]</blockquote>
+To filter the rows with index either "A" or "W", we can use <b>isin( )</b> function:<br />
+<blockquote class="tr_bq">
+income.loc[(income.Index == "A") | (income.Index == "W"),:]<br />
+<br />
+#Alternatively.<br />
+income.loc[income.Index.isin(["A","W"]),:]</blockquote>
+<pre>   Index          State    Y2002    Y2003    Y2004    Y2005    Y2006    Y2007  \
+0      A        Alabama  1296530  1317711  1118631  1492583  1107408  1440134   
+1      A         Alaska  1170302  1960378  1818085  1447852  1861639  1465841   
+2      A        Arizona  1742027  1968140  1377583  1782199  1102568  1109382   
+3      A       Arkansas  1485531  1994927  1119299  1947979  1669191  1801213   
+47     W     Washington  1977749  1687136  1199490  1163092  1334864  1621989   
+48     W  West Virginia  1677347  1380662  1176100  1888948  1922085  1740826   
+49     W      Wisconsin  1788920  1518578  1289663  1436888  1251678  1721874   
+50     W        Wyoming  1775190  1498098  1198212  1881688  1750527  1523124   
+
+      Y2008    Y2009    Y2010    Y2011    Y2012    Y2013    Y2014    Y2015  
+0   1945229  1944173  1237582  1440756  1186741  1852841  1558906  1916661  
+1   1551826  1436541  1629616  1230866  1512804  1985302  1580394  1979143  
+2   1752886  1554330  1300521  1130709  1907284  1363279  1525866  1647724  
+3   1188104  1628980  1669295  1928238  1216675  1591896  1360959  1329341  
+47  1545621  1555554  1179331  1150089  1775787  1273834  1387428  1377341  
+48  1238174  1539322  1539603  1872519  1462137  1683127  1204344  1198791  
+49  1980167  1901394  1648755  1940943  1729177  1510119  1701650  1846238  
+50  1587602  1504455  1282142  1881814  1673668  1994022  1204029  1853858  
+</pre>
+Alternatively we can use query( ) function and write our filtering criteria:<br />
+<blockquote class="tr_bq">
+income.query('Y2002&gt;1700000 &amp; Y2003 &gt; 1500000')</blockquote>
+<span style="color: #990000; font-size: x-large;"><br /></span>
+<b><span style="color: #990000; font-size: x-large;">Dealing with missing values</span></b><br />
+We create a new dataframe named 'crops' and to create a NaN value we use <b>np.nan</b> by importing <b>numpy</b>.<br />
+<blockquote class="tr_bq">
+import numpy as np<br />
+mydata = {'Crop': ['Rice', 'Wheat', 'Barley', 'Maize'],<br />
+&nbsp; &nbsp; &nbsp; &nbsp; 'Yield': [1010, 1025.2, 1404.2, 1251.7],<br />
+&nbsp; &nbsp; &nbsp; &nbsp; 'cost' : [102, np.nan, 20, 68]}<br />
+crops = pd.DataFrame(mydata)<br />
+crops</blockquote>
+<b>isnull( )</b> returns True and <b>notnull( )</b> returns False if the value is NaN.<br />
+<blockquote class="tr_bq">
+crops.isnull()&nbsp; #same as is.na in R<br />
+crops.notnull()&nbsp; #opposite of previous command.<br />
+crops.isnull().sum()&nbsp; #No. of missing values.</blockquote>
+crops.cost.isnull() firstly subsets the 'cost' from the dataframe and returns a logical vector with isnull()</div>
+<div>
+<br />
+<blockquote class="tr_bq">
+crops[crops.cost.isnull()] #shows the rows with NAs.<br />
+crops[crops.cost.isnull()].Crop #shows the rows with NAs in crops.Crop<br />
+crops[crops.cost.notnull()].Crop #shows the rows without NAs in crops.Crop</blockquote>
+To drop all the rows which have missing values in any rows we use<b> dropna(how = "any") </b>. By default <b>inplace = False</b> . If <b>how = "all"</b> means drop a row if all the elements in that row are missing<br />
+<br />
+<blockquote class="tr_bq">
+crops.dropna(how = "any").shape<br />
+crops.dropna(how = "all").shape&nbsp;&nbsp;</blockquote>
+To remove NaNs if any of 'Yield' or'cost' are missing we use the subset parameter and pass a list:<br />
+<blockquote class="tr_bq">
+crops.dropna(subset = ['Yield',"cost"],how = 'any').shape<br />
+crops.dropna(subset = ['Yield',"cost"],how = 'all').shape</blockquote>
+</div>
+<div>
+<div>
+Replacing the missing values by "UNKNOWN" sub attribute in Column name.</div>
+<blockquote class="tr_bq">
+crops['cost'].fillna(value = "UNKNOWN",inplace = True)<br />
+crops</blockquote>
+</div>
+<div>
+<span style="color: #990000; font-size: x-large;"><br /></span></div>
+<div>
+<div>
+<b><span style="color: #990000; font-size: x-large;">Dealing with duplicates</span></b></div>
+<div>
+We create a new dataframe comprising of items and their respective prices.</div>
+<div>
+<blockquote class="tr_bq">
+data = pd.DataFrame({"Items" : ["TV","Washing Machine","Mobile","TV","TV","Washing Machine"], "Price" : [10000,50000,20000,10000,10000,40000]})<br />
+data</blockquote>
+<pre>             Items  Price
+0               TV  10000
+1  Washing Machine  50000
+2           Mobile  20000
+3               TV  10000
+4               TV  10000
+5  Washing Machine  40000
+</pre>
+<b>duplicated()</b> returns a logical vector returning True when encounters duplicated.<br />
+<blockquote class="tr_bq">
+data.loc[data.duplicated(),:]<br />
+data.loc[data.duplicated(keep = "first"),:]</blockquote>
+By default <b>keep = 'first'</b> i.e. the first occurence is considered a unique value and its repetitions are considered as duplicates.<br />
+If <b>keep = "last"</b> the last occurence is considered a unique value and all its repetitions are considered as duplicates.<br />
+<blockquote class="tr_bq">
+data.loc[data.duplicated(keep = "last"),:] #last entries are not there,indices have changed.</blockquote>
+If<b> keep = "False"</b> then it considers all the occurences of the repeated observations as duplicates.<br />
+<blockquote class="tr_bq">
+data.loc[data.duplicated(keep = False),:]&nbsp; #all the duplicates, including unique are shown.</blockquote>
+<div>
+To drop the duplicates <b>drop_duplicates</b> is used with default<b> inplace = False,</b> keep = 'first' or 'last' or 'False' have the respective meanings as in duplicated( )</div>
+<blockquote class="tr_bq">
+data.drop_duplicates(keep = "first")<br />
+data.drop_duplicates(keep = "last")<br />
+data.drop_duplicates(keep = False,inplace = True)&nbsp; #by default inplace = False<br />
+data</blockquote>
+</div>
+</div>
+<div>
+<b><span style="color: #990000; font-size: x-large;"><br /></span></b></div>
+<div>
+<div>
+<b><span style="color: #990000; font-size: x-large;">Creating dummies</span></b></div>
+<div>
+Now we will consider the <b>iris dataset</b>.&nbsp;</div>
+<blockquote class="tr_bq">
+iris = pd.read_csv("C:\\Users\\Hp\\Desktop\\work\\Python\\Basics\\pandas\\iris.csv")<br />
+iris.head()</blockquote>
+<pre>   Sepal.Length  Sepal.Width  Petal.Length  Petal.Width Species
+0           5.1          3.5           1.4          0.2  setosa
+1           4.9          3.0           1.4          0.2  setosa
+2           4.7          3.2           1.3          0.2  setosa
+3           4.6          3.1           1.5          0.2  setosa
+4           5.0          3.6           1.4          0.2  setosa
+</pre>
+<div>
+<b>map( )</b> function is used to match the values and replace them in the new series automatically created.</div>
+<blockquote class="tr_bq">
+iris["setosa"] = iris.Species.map({"setosa" : 1,"versicolor":0, "virginica" : 0})<br />
+iris.head()</blockquote>
+<div>
+To create dummies<b> get_dummies( ) </b>is used.<b> iris.Species.prefix = "Species"</b> adds a prefix ' Species' to the new series created.</div>
+<blockquote class="tr_bq">
+pd.get_dummies(iris.Species,prefix = "Species")<br />
+pd.get_dummies(iris.Species,prefix = "Species").iloc[:,0:1]&nbsp; #1 is not included<br />
+species_dummies = pd.get_dummies(iris.Species,prefix = "Species").iloc[:,0:]</blockquote>
+<div>
+With<b> concat( )</b> function we can join multiple series or dataframes. <b>axis = 1 </b>denotes that they should be joined columnwise.</div>
+<div>
+<blockquote class="tr_bq">
+iris = pd.concat([iris,species_dummies],axis = 1)<br />
+iris.head()</blockquote>
+<pre>   Sepal.Length  Sepal.Width  Petal.Length  Petal.Width Species  \
+0           5.1          3.5           1.4          0.2  setosa   
+1           4.9          3.0           1.4          0.2  setosa   
+2           4.7          3.2           1.3          0.2  setosa   
+3           4.6          3.1           1.5          0.2  setosa   
+4           5.0          3.6           1.4          0.2  setosa   
+
+   Species_setosa  Species_versicolor  Species_virginica  
+0               1                   0                  0  
+1               1                   0                  0  
+2               1                   0                  0  
+3               1                   0                  0  
+4               1                   0                  0  
+</pre>
+<div>
+It is usual that for a variable with 'n' categories we creat 'n-1' dummies, thus to drop the first 'dummy' column we write <b>drop_first = True</b></div>
+<blockquote class="tr_bq">
+pd.get_dummies(iris,columns = ["Species"],drop_first = True).head()</blockquote>
+<b><br /></b>
+<b><span style="color: #990000; font-size: x-large;">Ranking</span></b><br />
+&nbsp;To create a dataframe of all the ranks we use<b> rank( )</b><br />
+<blockquote class="tr_bq">
+iris.rank()&nbsp;</blockquote>
+<b><span style="color: #990000; font-size: x-large;">Ranking by a specific variable</span></b><br />
+Suppose we want to rank the Sepal.Length for different species in ascending order:<br />
+<blockquote class="tr_bq">
+iris['Rank'] = iris.sort_values(['Sepal.Length'], ascending=[True]).groupby(['Species']).cumcount() + 1<br />
+iris.head( )<br />
+<br />
+#Alternatively<br />
+iris['Rank2'] = iris['Sepal.Length'].groupby(iris["Species"]).rank(ascending=1)<br />
+iris.head()</blockquote>
+<div>
+<span style="color: #990000; font-size: x-large;"><br /></span></div>
+<b><span style="color: #990000; font-size: x-large;">Calculating the Cumulative sum</span></b><br />
+Using<b> cumsum( )</b> function we can obtain the cumulative sum<br />
+<blockquote class="tr_bq">
+iris['cum_sum'] = iris["Sepal.Length"].cumsum()<br />
+iris.head()</blockquote>
+<b><span style="color: #990000; font-size: x-large;">Cumulative sum by a variable</span></b><br />
+To find the cumulative sum of sepal lengths for different species we use <b>groupby( ) </b>and then use <b>cumsum( )</b><br />
+<blockquote class="tr_bq">
+iris["cumsum2"] = iris.groupby(["Species"])["Sepal.Length"].cumsum()<br />
+iris.head()</blockquote>
+</div>
+<div>
+<span style="font-size: x-large;"><br /></span></div>
+</div>
+<div>
+<div>
+<b><span style="color: #990000; font-size: x-large;">Calculating the percentiles.</span></b></div>
+<div>
+Various quantiles can be obtained by using<b> quantile( )</b></div>
+<blockquote class="tr_bq">
+iris.quantile(0.5)<br />
+iris.quantile([0.1,0.2,0.5])<br />
+iris.quantile(0.55)</blockquote>
+<b><span style="color: #990000; font-size: x-large;"><br /></span></b><b><span style="color: #990000; font-size: x-large;">if else in Python</span></b><br />
+We create a new dataframe of students' name and their respective zodiac signs.<br />
+<blockquote class="tr_bq">
+students = pd.DataFrame({'Names': ['John','Mary','Henry','Augustus','Kenny'],<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'Zodiac Signs': ['Aquarius','Libra','Gemini','Pisces','Virgo']})</blockquote>
+<pre>def name(row):
+    if row["Names"] in ["John","Henry"]:
+        return "yes"
+    else:
+        return "no"
+
+students['flag'] = students.apply(name, axis=1)
+students
+</pre>
+Functions in python are defined using the block keyword <code>def </code>, followed with the function's name as the block's name. <b>apply( )</b> function applies function along rows or columns of dataframe.<br />
+<br />
+<code>Note :</code>If using simple 'if else'<b> we need to take care of the indentation </b>. Python does not involve curly braces for the loops and if else.<br />
+<br />
+<b><span style="font-size: large;">Output
+</span></b>
+<br />
+<pre>      Names Zodiac Signs flag
+0      John     Aquarius  yes
+1      Mary        Libra   no
+2     Henry       Gemini  yes
+3  Augustus       Pisces   no
+4     Kenny        Virgo   no
+</pre>
+<br />
+<b>Alternatively</b>, By importing numpy we can use <b>np.where</b>. The first argument is the condition to be evaluated, 2nd argument is the value if condition is True and last argument defines the value if the condition evaluated returns False.<br />
+<blockquote class="tr_bq">
+import numpy as np<br />
+students['flag'] = np.where(students['Names'].isin(['John','Henry']), 'yes', 'no')<br />
+students</blockquote>
+<b><span style="color: #990000; font-size: x-large;"><br /></span></b>
+<b><span style="color: #990000; font-size: x-large;">Multiple Conditions : If Else-if Else</span></b><br />
+<pre>def mname(row):
+    if row["Names"] == "John" and row["Zodiac Signs"] == "Aquarius" :
+        return "yellow"
+    elif row["Names"] == "Mary" and row["Zodiac Signs"] == "Libra" :
+        return "blue"
+    elif row["Zodiac Signs"] == "Pisces" :
+        return "blue"
+    else:
+        return "black"
+
+students['color'] = students.apply(mname, axis=1)
+students
+</pre>
+<br />
+We create a list of conditions and their respective values if evaluated True and use<b> np.select </b>where default value is the value if all the conditions is False<br />
+<blockquote class="tr_bq">
+conditions = [<br />
+&nbsp; &nbsp; (students['Names'] == 'John') &amp; (students['Zodiac Signs'] == 'Aquarius'),<br />
+&nbsp; &nbsp; (students['Names'] == 'Mary') &amp; (students['Zodiac Signs'] == 'Libra'),<br />
+&nbsp; &nbsp; (students['Zodiac Signs'] == 'Pisces')]<br />
+choices = ['yellow', 'blue', 'purple']<br />
+students['color'] = np.select(conditions, choices, default='black')<br />
+students</blockquote>
+<pre>      Names Zodiac Signs flag   color
+0      John     Aquarius  yes  yellow
+1      Mary        Libra   no    blue
+2     Henry       Gemini  yes   black
+3  Augustus       Pisces   no  purple
+4     Kenny        Virgo   no   black
+</pre>
+<br />
+<b><span style="color: #990000; font-size: x-large;">Select numeric or categorical columns only</span></b><br />
+To include numeric columns we use<b> select_dtypes( )</b>&nbsp;</div>
+<div>
+<blockquote class="tr_bq">
+data1 = iris.select_dtypes(include=[np.number])<br />
+data1.head()</blockquote>
+&nbsp;<b>_get_numeric_data</b> also provides utility to select the numeric columns only.<br />
+<blockquote class="tr_bq">
+data3 = iris._get_numeric_data()<br />
+data3.head(3)</blockquote>
+<pre>   Sepal.Length  Sepal.Width  Petal.Length  Petal.Width  cum_sum  cumsum2
+0           5.1          3.5           1.4          0.2      5.1      5.1
+1           4.9          3.0           1.4          0.2     10.0     10.0
+2           4.7          3.2           1.3          0.2     14.7     14.7
+</pre>
+<div>
+For selecting categorical variables</div>
+<blockquote class="tr_bq">
+data4 = iris.select_dtypes(include = ['object'])<br />
+data4.head(2)</blockquote>
+<pre> Species
+0  setosa
+1  setosa
+</pre>
+<span style="font-size: x-large;"><br /></span>
+<b><span style="color: #990000; font-size: x-large;">Concatenating</span></b><br />
+We create 2 dataframes containing the details of the students:<br />
+<blockquote class="tr_bq">
+students = pd.DataFrame({'Names': ['John','Mary','Henry','Augustus','Kenny'],<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'Zodiac Signs': ['Aquarius','Libra','Gemini','Pisces','Virgo']})<br />
+students2 = pd.DataFrame({'Names': ['John','Mary','Henry','Augustus','Kenny'],<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'Marks' : [50,81,98,25,35]})</blockquote>
+&nbsp;using <b>pd.concat( )</b> function we can join the 2 dataframes:<br />
+<blockquote class="tr_bq">
+data = pd.concat([students,students2])&nbsp; #by default axis = 0</blockquote>
+<pre>   Marks     Names Zodiac Signs
+0    NaN      John     Aquarius
+1    NaN      Mary        Libra
+2    NaN     Henry       Gemini
+3    NaN  Augustus       Pisces
+4    NaN     Kenny        Virgo
+0   50.0      John          NaN
+1   81.0      Mary          NaN
+2   98.0     Henry          NaN
+3   25.0  Augustus          NaN
+4   35.0     Kenny          NaN
+</pre>
+By default <code>axis = 0</code> thus the new dataframe will be added row-wise. If a column is not present then in one of the dataframes it creates NaNs. To join column wise we set <code>axis = 1</code><br />
+<blockquote class="tr_bq">
+data = pd.concat([students,students2],axis = 1)<br />
+data</blockquote>
+<pre>      Names Zodiac Signs  Marks     Names
+0      John     Aquarius     50      John
+1      Mary        Libra     81      Mary
+2     Henry       Gemini     98     Henry
+3  Augustus       Pisces     25  Augustus
+4     Kenny        Virgo     35     Kenny
+</pre>
+Using<b> append </b>function we can join the dataframes row-wise<br />
+<blockquote class="tr_bq">
+students.append(students2)&nbsp; #for rows</blockquote>
+Alternatively we can <b>create a dictionary</b> of the two data frames and can use <b>pd.concat </b>to join the dataframes row wise<br />
+<blockquote class="tr_bq">
+classes = {'x': students, 'y': students2}<br />
+&nbsp;result = pd.concat(classes)<br />
+result&nbsp;</blockquote>
+<pre>     Marks     Names Zodiac Signs
+x 0    NaN      John     Aquarius
+  1    NaN      Mary        Libra
+  2    NaN     Henry       Gemini
+  3    NaN  Augustus       Pisces
+  4    NaN     Kenny        Virgo
+y 0   50.0      John          NaN
+  1   81.0      Mary          NaN
+  2   98.0     Henry          NaN
+  3   25.0  Augustus          NaN
+  4   35.0     Kenny          NaN
+</pre>
+</div>
+<div>
+<b><span style="color: #990000;"><br /></span></b></div>
+<div>
+<div>
+<b><span style="color: #990000; font-size: x-large;">Merging or joining on the basis of common variable.</span></b></div>
+<div>
+We take 2 dataframes with different number of observations:</div>
+<blockquote class="tr_bq">
+students = pd.DataFrame({'Names': ['John','Mary','Henry','Maria'],<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'Zodiac Signs': ['Aquarius','Libra','Gemini','Capricorn']})<br />
+students2 = pd.DataFrame({'Names': ['John','Mary','Henry','Augustus','Kenny'],<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'Marks' : [50,81,98,25,35]})</blockquote>
+Using<b> pd.merge</b> we can join the two dataframes.<b> on = 'Names' </b>denotes the common variable on the basis of which the dataframes are to be combined is 'Names'<br />
+<blockquote class="tr_bq">
+result = pd.merge(students, students2, on='Names')&nbsp; #it only takes intersections<br />
+result</blockquote>
+<pre>   Names Zodiac Signs  Marks
+0   John     Aquarius     50
+1   Mary        Libra     81
+2  Henry       Gemini     98
+</pre>
+&nbsp;By default<b> how = "inner"</b> thus it takes only the common elements in both the dataframes. If you want all the elements in both the dataframes set<b> how = "outer"</b><br />
+<blockquote class="tr_bq">
+&nbsp;result = pd.merge(students, students2, on='Names',how = "outer")&nbsp; #it only takes unions<br />
+result</blockquote>
+<pre>      Names Zodiac Signs  Marks
+0      John     Aquarius   50.0
+1      Mary        Libra   81.0
+2     Henry       Gemini   98.0
+3     Maria    Capricorn    NaN
+4  Augustus          NaN   25.0
+5     Kenny          NaN   35.0
+</pre>
+<div>
+To take only intersections and all the values in left df set how = 'left'</div>
+<blockquote class="tr_bq">
+result = pd.merge(students, students2, on='Names',how = "left")<br />
+result</blockquote>
+<pre>   Names Zodiac Signs  Marks
+0   John     Aquarius   50.0
+1   Mary        Libra   81.0
+2  Henry       Gemini   98.0
+3  Maria    Capricorn    NaN
+</pre>
+<div>
+Similarly<b> how = 'right' </b>takes only intersections and all the values in right df.</div>
+<blockquote class="tr_bq">
+result = pd.merge(students, students2, on='Names',how = "right",indicator = True)<br />
+result</blockquote>
+<pre>      Names Zodiac Signs  Marks      _merge
+0      John     Aquarius     50        both
+1      Mary        Libra     81        both
+2     Henry       Gemini     98        both
+3  Augustus          NaN     25  right_only
+4     Kenny          NaN     35  right_only</pre>
+<blockquote class="tr_bq">
+<b>indicator = True</b> creates a column for indicating that whether the values are present in both the dataframes or either left or right dataframe.</blockquote>
+</div>
+</div>
+</div>
+<script type='text/javascript'>
+function insertAfter(addition,target) {
+var parent = target.parentNode;
+if (parent.lastChild == target) {
+parent.appendChild(addition); 
+} else {
+parent.insertBefore(addition,target.nextSibling);
+}
+}
+var adscont = document.getElementById("adsense-content");
+var target = document.getElementById("adsense-target");
+var linebreak = target.getElementsByTagName("blockquote");
+if (linebreak.length > 0){
+insertAfter(adscont,linebreak[0]);
+}
+</script>
+<div itemprop='publisher' itemscope='itemscope' itemtype='https://schema.org/Organization'>
+<div itemprop='logo' itemscope='itemscope' itemtype='https://schema.org/ImageObject'>
+<img src='https://training.listendata.com/wp-content/uploads/2016/03/listendata-logo.png' style='display:none;'/>
+<meta content='https://training.listendata.com/wp-content/uploads/2016/03/listendata-logo.png' itemprop='url'/>
+<meta content='309' itemprop='width'/>
+<meta content='95' itemprop='height'/>
+</div>
+<meta content='ListenData' itemprop='name'/>
+</div>
+<div class='share-post'>
+<span style='font-size:18px; font-weight:bold; margin:9px 0px; color:#666; padding:10px;'> Love this Post? Spread the Word</span>
+<div class='addthis_inline_share_toolbox'></div>
+</div>
+<div class='about-author'>
+<span style='font-size:18px; margin:9px 0px; color:#666; border-bottom:2px solid #666; border-top:0px;'> About Author:</span>
+<img align='left' src='https://4.bp.blogspot.com/-K-VVfgQ5fMI/WkDEEPmygZI/AAAAAAAAGkA/yO4V8p_bYU0xWo64QgxGmD06iAAOYLaUACLcBGAs/s1600/rsz_ekta.jpg'/>
+<br/>
+<p>Ekta is a Data Science enthusiast, currently in the final year of her post graduation in statistics from Delhi University. She is passionate about statistics and loves to use analytics to solve complex data problems. She is working an an intern, ListenData.
+  Let's Get Connected: <a href='https://www.facebook.com/ekta.aggarwal1810' rel='nofollow' target='_blank'><font color='#00aced'>Facebook</font></a>  | <a href='https://www.linkedin.com/in/ekta-aggarwal-093837115/' rel='nofollow' target='_blank'><font color='#dd4b39'>LinkedIn</font>
+</a></p>
+</div>
+<form action='https://feedburner.google.com/fb/a/mailverify' method='post' onsubmit='window.open(&#39;https://feedburner.google.com/fb/a/mailverify?uri=listendata&#39;, &#39;popupwindow&#39;, &#39;scrollbars=yes,width=550,height=520&#39;);return true' style='border:1px solid #DDD;padding:3px;text-align:center;background:#F1F1F1;' target='popupwindow'><span style='margin:0 auto; padding-left:24px; position:relative;background: url(https://3.bp.blogspot.com/_b0xJ7qk6DTc/TEg2iHmUivI/AAAAAAAAAu0/j9tIV5fjTXw/s1600/myrss.gif) right center no-repeat;'></span><font color='#BA0000' size='4'>Get Free Email Updates : </font>
+<input name='email' onblur='if (this.value == "") {this.value = "Enter your email address";}' onfocus='if (this.value == "Enter your email address") {this.value = ""}' style='width:200px;height:25px; background: #fFF left no-repeat;padding: 1px 0px 1px 24px;border: 1px solid #8cafe3;' type='text' value='Enter your email address'/>
+<input name='uri' type='hidden' value='listendata'/><input name='loc' type='hidden' value='en_US'/><input style='background-color: #E95D22; border-radius: 0px 5px 5px 0px; border: medium none; border: rgba(0, 0, 0, 0.1); color: white; font-family: georgia; font-size: 14px; font-weight: bold; height: 30px; left: 2px; margin-left: -5px; padding: 2px 10px; position: relative; ' type='submit' value='Submit'/>
+<center><i>*Please confirm your email address by clicking on the link sent to your Email*</i></center>
+</form>
+<div id='related-post'>
+<span style='color: #000; font-size: x-large;'>Related Posts:</span>
+<script src='/feeds/posts/default/-/Pandas?alt=json-in-script&callback=related_results_labels&max-results=5' type='text/javascript'></script>
+<script src='/feeds/posts/default/-/Python?alt=json-in-script&callback=related_results_labels&max-results=5' type='text/javascript'></script>
+<script type='text/javascript'>removeRelatedDuplicates();printRelatedLabels();</script>
+</div>
+</div>
+</div>
+<div class='comments' id='comments'>
+<a name='comments'></a>
+<span style='font-size: large;'>
+14 Responses to "Pandas Python Tutorial - Learn by Examples" </span>
+<div class='comments-content'>
+<script async='async' src='//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js' type='text/javascript'></script>
+<script type='text/javascript'>(function(){var m=[{'id': '7574277227679547322', 'body': 'Awesome. Thanks a lot for sharing ', 'timestamp': '1514384223660', 'permalink': 'https://www.listendata.com/2017/12/python-pandas-tutorial.html?showComment\x3d1514384223660#c7574277227679547322', 'author': {'name': 'Mithun', 'avatarUrl': '//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA\x3ds35', 'profileUrl': 'https://www.blogger.com/profile/14966750401978666672'}, 'displayTime': '27 December 2017 at 06:17', 'deleteclass': 'item-control blog-admin pid-278122851'}, {'id': '5146835913661229090', 'parentId': '7574277227679547322', 'body': 'Thanks for your admiration.', 'timestamp': '1514393070851', 'permalink': 'https://www.listendata.com/2017/12/python-pandas-tutorial.html?showComment\x3d1514393070851#c5146835913661229090', 'author': {'name': 'Ekta Aggarwal', 'avatarUrl': '//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA\x3ds35', 'profileUrl': 'https://www.blogger.com/profile/14025835305855193383'}, 'displayTime': '27 December 2017 at 08:44', 'deleteclass': 'item-control blog-admin pid-707749671'}, {'id': '8968039055826339484', 'body': 'Great content... Everything at one place', 'timestamp': '1514481344091', 'permalink': 'https://www.listendata.com/2017/12/python-pandas-tutorial.html?showComment\x3d1514481344091#c8968039055826339484', 'author': {'name': 'Nitin Rahul', 'avatarUrl': '//lh3.googleusercontent.com/-uN4zPNFJyyk/AAAAAAAAAAI/AAAAAAAAA-U/1JrV6dqsJqs/s35-c/photo.jpg', 'profileUrl': 'https://www.blogger.com/profile/14852366605370627215'}, 'displayTime': '28 December 2017 at 09:15', 'deleteclass': 'item-control blog-admin pid-1873404102'}, {'id': '365832447701552851', 'parentId': '8968039055826339484', 'body': 'Thanks. I hope it helps you.', 'timestamp': '1514530558496', 'permalink': 'https://www.listendata.com/2017/12/python-pandas-tutorial.html?showComment\x3d1514530558496#c365832447701552851', 'author': {'name': 'Ekta Aggarwal', 'avatarUrl': '//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA\x3ds35', 'profileUrl': 'https://www.blogger.com/profile/14025835305855193383'}, 'displayTime': '28 December 2017 at 22:55', 'deleteclass': 'item-control blog-admin pid-707749671'}, {'id': '1337211723869230880', 'body': 'thanks', 'timestamp': '1515231156984', 'permalink': 'https://www.listendata.com/2017/12/python-pandas-tutorial.html?showComment\x3d1515231156984#c1337211723869230880', 'author': {'name': 'mak', 'avatarUrl': '//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA\x3ds35', 'profileUrl': 'https://www.blogger.com/profile/04968515792000234825'}, 'displayTime': '6 January 2018 at 01:32', 'deleteclass': 'item-control blog-admin pid-1160480701'}, {'id': '7543038836751238381', 'body': 'Thanks for sharing That\x26#39;s great Tips For Me you can Get Also more Software at \x3ca href\x3d\x22http://www.getintopcs.org/\x22 rel\x3d\x22nofollow\x22\x3e getintopc\x3c/a\x3e\x3cbr /\x3e\x3cbr /\x3e', 'timestamp': '1519797513442', 'permalink': 'https://www.listendata.com/2017/12/python-pandas-tutorial.html?showComment\x3d1519797513442#c7543038836751238381', 'author': {'name': 'Phone Advice', 'avatarUrl': '//lh5.googleusercontent.com/-P1xVrAYtohc/AAAAAAAAAAI/AAAAAAAAAA4/oBoDvBZT4Y4/s35-c/photo.jpg', 'profileUrl': 'https://www.blogger.com/profile/04740083241363695497'}, 'displayTime': '27 February 2018 at 21:58', 'deleteclass': 'item-control blog-admin pid-2112497855'}, {'id': '4495903912263164164', 'body': 'Probably the best thing for quick revision...great work!!!', 'timestamp': '1520690696577', 'permalink': 'https://www.listendata.com/2017/12/python-pandas-tutorial.html?showComment\x3d1520690696577#c4495903912263164164', 'author': {'name': 'Sheetal', 'avatarUrl': '//img1.blogblog.com/img/blank.gif', 'profileUrl': ''}, 'displayTime': '10 March 2018 at 06:04', 'deleteclass': 'item-control blog-admin pid-1918624941'}, {'id': '8358933922356100181', 'body': 'Thanks for sharing That\x26#39;s great Tips For Me you can Get Also more Software at. ', 'timestamp': '1524306700484', 'permalink': 'https://www.listendata.com/2017/12/python-pandas-tutorial.html?showComment\x3d1524306700484#c8358933922356100181', 'author': {'name': 'saloni', 'avatarUrl': '//img1.blogblog.com/img/blank.gif', 'profileUrl': 'http://www.filehippo-free.co/'}, 'displayTime': '21 April 2018 at 03:31', 'deleteclass': 'item-control blog-admin pid-628692765'}, {'id': '8764584708898738731', 'body': 'Nice article...', 'timestamp': '1524748618626', 'permalink': 'https://www.listendata.com/2017/12/python-pandas-tutorial.html?showComment\x3d1524748618626#c8764584708898738731', 'author': {'name': 'amol_benare604', 'avatarUrl': '//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA\x3ds35', 'profileUrl': 'https://www.blogger.com/profile/04157264589199839233'}, 'displayTime': '26 April 2018 at 06:16', 'deleteclass': 'item-control blog-admin pid-1268133442'}, {'id': '5798386754559862723', 'body': 'nice blog.. i think it is usefull', 'timestamp': '1525409744519', 'permalink': 'https://www.listendata.com/2017/12/python-pandas-tutorial.html?showComment\x3d1525409744519#c5798386754559862723', 'author': {'name': 'getintopc Free Download Software', 'avatarUrl': '//lh4.googleusercontent.com/-HecOM1seTEg/AAAAAAAAAAI/AAAAAAAAABQ/Z1fLbTmZLzU/s35-c/photo.jpg', 'profileUrl': 'https://www.blogger.com/profile/08270285723510268194'}, 'displayTime': '3 May 2018 at 21:55', 'deleteclass': 'item-control blog-admin pid-153642270'}, {'id': '8431673315283389818', 'body': 'nice useful for me ', 'timestamp': '1527339242519', 'permalink': 'https://www.listendata.com/2017/12/python-pandas-tutorial.html?showComment\x3d1527339242519#c8431673315283389818', 'author': {'name': 'moorthy', 'avatarUrl': '//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA\x3ds35', 'profileUrl': 'https://www.blogger.com/profile/17324836414198311234'}, 'displayTime': '26 May 2018 at 05:54', 'deleteclass': 'item-control blog-admin pid-98867304'}, {'id': '244531199091222777', 'body': 'how to select a particular row and particulat column\x3cbr /\x3esay i want 5th row and 6th column cell value?', 'timestamp': '1528219247128', 'permalink': 'https://www.listendata.com/2017/12/python-pandas-tutorial.html?showComment\x3d1528219247128#c244531199091222777', 'author': {'name': 'Basling', 'avatarUrl': '//1.bp.blogspot.com/_sZDsiI2NoiQ/Sk_JXkwBINI/AAAAAAAAAnw/4ZOqzBgcfYU/S45-s35/Goodpoem.bmp', 'profileUrl': 'https://www.blogger.com/profile/08321943379918399479'}, 'displayTime': '5 June 2018 at 10:20', 'deleteclass': 'item-control blog-admin pid-1831385101'}, {'id': '3533071542677140936', 'parentId': '244531199091222777', 'body': 'income.iloc[4,5]', 'timestamp': '1529062547649', 'permalink': 'https://www.listendata.com/2017/12/python-pandas-tutorial.html?showComment\x3d1529062547649#c3533071542677140936', 'author': {'name': 'Deepanshu Bhalla', 'avatarUrl': '//lh3.googleusercontent.com/-m-IN-WRLAdU/AAAAAAAAAAI/AAAAAAAAES0/KyMVqj64uyo/s35-c/photo.jpg', 'profileUrl': 'https://www.blogger.com/profile/09802839558125192674'}, 'displayTime': '15 June 2018 at 04:35', 'deleteclass': 'item-control blog-admin pid-966036103'}, {'id': '7939314578041889325', 'body': 'Excellent, Thanks for sharing!!!', 'timestamp': '1530377431418', 'permalink': 'https://www.listendata.com/2017/12/python-pandas-tutorial.html?showComment\x3d1530377431418#c7939314578041889325', 'author': {'name': 'Srinivas G', 'avatarUrl': '//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA\x3ds35', 'profileUrl': 'https://www.blogger.com/profile/16413978770533260760'}, 'displayTime': '30 June 2018 at 09:50', 'deleteclass': 'item-control blog-admin pid-490232343'}];var k={'loadMore': 'Load more...', 'loading': 'Loading...', 'loaded': 'No more.', 'addComment': 'Add comment', 'reply': 'Reply', 'delete': 'Delete'};var t={'blogId': '7958828565254404797', 'postId': '6410692069216731624', 'feed': 'https://www.listendata.com/feeds/6410692069216731624/comments/default', 'authorName': 'Ekta Aggarwal', 'authorUrl': 'https://www.blogger.com/profile/14025835305855193383', 'baseUri': 'https://www.blogger.com', 'maxThreadDepth': 2};var e=null;if(m&&m.length>0){e=parseInt(m[m.length-1].timestamp)+1}var r=function(x){if(x.gd$extendedProperty){for(var w in x.gd$extendedProperty){if(x.gd$extendedProperty[w].name=="blogger.contentRemoved"){return'<span class="deleted-comment">'+x.content.$t+"</span>"}}}return x.content.$t};var n=function(z){e=null;var D=[];if(z&&z.feed&&z.feed.entry){for(var A=0,E;E=z.feed.entry[A];A++){var C={};var w=/blog-(\d+).post-(\d+)/.exec(E.id.$t);C.id=w?w[2]:null;C.body=r(E);C.timestamp=Date.parse(E.published.$t)+"";if(E.author&&E.author.constructor===Array){var x=E.author[0];if(x){C.author={name:(x.name?x.name.$t:undefined),profileUrl:(x.uri?x.uri.$t:undefined),avatarUrl:(x.gd$image?x.gd$image.src:undefined)}}}if(E.link){if(E.link[2]){C.link=C.permalink=E.link[2].href}if(E.link[3]){var B=/.*comments\/default\/(\d+)\?.*/.exec(E.link[3].href);if(B&&B[1]){C.parentId=B[1]}}}C.deleteclass="item-control blog-admin";if(E.gd$extendedProperty){for(var y in E.gd$extendedProperty){if(E.gd$extendedProperty[y].name=="blogger.itemClass"){C.deleteclass+=" "+E.gd$extendedProperty[y].value}else{if(E.gd$extendedProperty[y].name=="blogger.displayTime"){C.displayTime=E.gd$extendedProperty[y].value}}}}D.push(C)}}return D};var i=function(y){if(c()){var x=t.feed+"?alt=json&v=2&orderby=published&reverse=false&max-results=50";if(e){x+="&published-min="+new Date(e).toISOString()}window.bloggercomments=function(A){var z=n(A);e=z.length<50?null:parseInt(z[z.length-1].timestamp)+1;y(z);window.bloggercomments=null};x+="&callback=bloggercomments";var w=document.createElement("script");w.type="text/javascript";w.src=x;document.getElementsByTagName("head")[0].appendChild(w)}};var c=function(){return !!e};var a=function(w,y){if("iswriter"==w){var x=!!y.author&&y.author.name==t.authorName&&y.author.profileUrl==t.authorUrl;return x?"true":""}else{if("deletelink"==w){return t.baseUri+"/delete-comment.g?blogID="+t.blogId+"&postID="+y.id}else{if("deleteclass"==w){return y.deleteclass}}}return""};var g=null;var q=null;var l=undefined;var d=function(w,x){if(g==null){g=document.getElementById("comment-editor");if(g!=null){g.height="250px";g.style.display="block";q=g.src.split("#")}}if(g&&(w!==l)){document.getElementById(x).insertBefore(g.parentNode,null);g.src=q[0]+(w?"&parentID="+w:"")+"#"+q[1];l=w}};var b=(window.location.hash||"#").substring(1);var p,j;if(/^comment-form_/.test(b)){p=b.substring("comment-form_".length)}else{if(/^c[0-9]+$/.test(b)){j=b.substring(1)}}var f={maxDepth:t.maxThreadDepth};var s={id:t.postId,data:m,loadNext:i,hasMore:c,getMeta:a,onReply:d,rendered:true,initComment:j,initReplyThread:p,config:f,messages:k};var u=function(){if(window.goog&&window.goog.comments){var w=document.getElementById("comment-holder");window.goog.comments.render(w,s)}};if(window.goog&&window.goog.comments){u()}else{window.goog=window.goog||{};window.goog.comments=window.goog.comments||{};window.goog.comments.loadQueue=window.goog.comments.loadQueue||[];window.goog.comments.loadQueue.push(u)}})();</script>
+<div id='comment-holder'>
+<div id='bc_0_15C' kind='c'><div id='bc_0_15CT'><div id='bc_0_14T' class='comment-thread' kind='r'  t='0' u='0'><ol id='bc_0_14TB'><li id='bc_0_1B' class='comment' kind='b'><div class='avatar-image-container'><img src='//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA=s35'></img></div><div id='c7574277227679547322' class='comment-block'><div id='bc_0_1M' class='comment-header' kind='m'><cite class='user'><a rel='nofollow' href='https://www.blogger.com/profile/14966750401978666672'>Mithun</a></cite><span class='icon user'></span><span class='datetime secondary-text'><a rel='nofollow' href='https://www.listendata.com/2017/12/python-pandas-tutorial.html?showComment=1514384223660#c7574277227679547322'>27 December 2017 at 06:17</a></span></div><p id='bc_0_1MC' class='comment-content'>Awesome. Thanks a lot for sharing </p><span id='bc_0_1MN' class='comment-actions secondary-text' kind='m'><a kind='i' href='javascript:;' target='_self' o='r'>Reply</a><span class='item-control blog-admin pid-278122851'><a o='d' target='_self' href='https://www.blogger.com/delete-comment.g?blogID=7958828565254404797&amp;postID=7574277227679547322'>Delete</a></span></span></div><div id='bc_0_1BR' class='comment-replies'><span id='bc_0_1b+seedt84D' kind='d'><div id='bc_0_0T' class='comment-thread inline-thread' kind='t'   t='0' u='0'><span id='bc_0_0TT' class='thread-toggle thread-expanded' kind='g'><span id='bc_0_0TA' class='thread-arrow'></span><span id='bc_0_0TN' class='thread-count'><span id='bc_0_0TNT' style='display: none;'></span><span id='bc_0_0TNU' style='display: none;'></span><a href='javascript:;' target='_self'>Replies</a><div id='bc_0_0TD' class='thread-dropContainer thread-expanded'><span class='thread-drop'></span></div></span></span><ol id='bc_0_0TC' class='thread-chrome thread-expanded'><div><li id='bc_0_0B' class='comment' kind='b'><div class='avatar-image-container'><img src='//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA=s35'></img></div><div id='c5146835913661229090' class='comment-block'><div id='bc_0_0M' class='comment-header' kind='m'><cite class='user blog-author'><a rel='nofollow' href='https://www.blogger.com/profile/14025835305855193383'>Ekta Aggarwal</a></cite><span class='icon user blog-author'></span><span class='datetime secondary-text'><a rel='nofollow' href='https://www.listendata.com/2017/12/python-pandas-tutorial.html?showComment=1514393070851#c5146835913661229090'>27 December 2017 at 08:44</a></span></div><p id='bc_0_0MC' class='comment-content'>Thanks for your admiration.</p><span id='bc_0_0MN' class='comment-actions secondary-text' kind='m'><span class='item-control blog-admin pid-707749671'><a o='d' target='_self' href='https://www.blogger.com/delete-comment.g?blogID=7958828565254404797&amp;postID=5146835913661229090'>Delete</a></span></span></div><div id='bc_0_0BR' class='comment-replies'></div><div id='bc_0_0B_box' class='comment-replybox-single'></div></li></div><div id='bc_0_0I' class='continue' kind='ci'><a href='javascript:;' target='_self'>Reply</a></div></ol><div id='bc_0_0T_box' class='comment-replybox-thread'></div></div></span></div><div id='bc_0_1B_box' class='comment-replybox-single'></div></li><li id='bc_0_3B' class='comment' kind='b'><div class='avatar-image-container'><img src='//lh3.googleusercontent.com/-uN4zPNFJyyk/AAAAAAAAAAI/AAAAAAAAA-U/1JrV6dqsJqs/s35-c/photo.jpg'></img></div><div id='c8968039055826339484' class='comment-block'><div id='bc_0_3M' class='comment-header' kind='m'><cite class='user'><a rel='nofollow' href='https://www.blogger.com/profile/14852366605370627215'>Nitin Rahul</a></cite><span class='icon user'></span><span class='datetime secondary-text'><a rel='nofollow' href='https://www.listendata.com/2017/12/python-pandas-tutorial.html?showComment=1514481344091#c8968039055826339484'>28 December 2017 at 09:15</a></span></div><p id='bc_0_3MC' class='comment-content'>Great content... Everything at one place</p><span id='bc_0_3MN' class='comment-actions secondary-text' kind='m'><a kind='i' href='javascript:;' target='_self' o='r'>Reply</a><span class='item-control blog-admin pid-1873404102'><a o='d' target='_self' href='https://www.blogger.com/delete-comment.g?blogID=7958828565254404797&amp;postID=8968039055826339484'>Delete</a></span></span></div><div id='bc_0_3BR' class='comment-replies'><span id='bc_0_3b+seedt86D' kind='d'><div id='bc_0_2T' class='comment-thread inline-thread' kind='t'   t='0' u='0'><span id='bc_0_2TT' class='thread-toggle thread-expanded' kind='g'><span id='bc_0_2TA' class='thread-arrow'></span><span id='bc_0_2TN' class='thread-count'><span id='bc_0_2TNT' style='display: none;'></span><span id='bc_0_2TNU' style='display: none;'></span><a href='javascript:;' target='_self'>Replies</a><div id='bc_0_2TD' class='thread-dropContainer thread-expanded'><span class='thread-drop'></span></div></span></span><ol id='bc_0_2TC' class='thread-chrome thread-expanded'><div><li id='bc_0_2B' class='comment' kind='b'><div class='avatar-image-container'><img src='//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA=s35'></img></div><div id='c365832447701552851' class='comment-block'><div id='bc_0_2M' class='comment-header' kind='m'><cite class='user blog-author'><a rel='nofollow' href='https://www.blogger.com/profile/14025835305855193383'>Ekta Aggarwal</a></cite><span class='icon user blog-author'></span><span class='datetime secondary-text'><a rel='nofollow' href='https://www.listendata.com/2017/12/python-pandas-tutorial.html?showComment=1514530558496#c365832447701552851'>28 December 2017 at 22:55</a></span></div><p id='bc_0_2MC' class='comment-content'>Thanks. I hope it helps you.</p><span id='bc_0_2MN' class='comment-actions secondary-text' kind='m'><span class='item-control blog-admin pid-707749671'><a o='d' target='_self' href='https://www.blogger.com/delete-comment.g?blogID=7958828565254404797&amp;postID=365832447701552851'>Delete</a></span></span></div><div id='bc_0_2BR' class='comment-replies'></div><div id='bc_0_2B_box' class='comment-replybox-single'></div></li></div><div id='bc_0_2I' class='continue' kind='ci'><a href='javascript:;' target='_self'>Reply</a></div></ol><div id='bc_0_2T_box' class='comment-replybox-thread'></div></div></span></div><div id='bc_0_3B_box' class='comment-replybox-single'></div></li><li id='bc_0_4B' class='comment' kind='b'><div class='avatar-image-container'><img src='//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA=s35'></img></div><div id='c1337211723869230880' class='comment-block'><div id='bc_0_4M' class='comment-header' kind='m'><cite class='user'><a rel='nofollow' href='https://www.blogger.com/profile/04968515792000234825'>mak</a></cite><span class='icon user'></span><span class='datetime secondary-text'><a rel='nofollow' href='https://www.listendata.com/2017/12/python-pandas-tutorial.html?showComment=1515231156984#c1337211723869230880'>6 January 2018 at 01:32</a></span></div><p id='bc_0_4MC' class='comment-content'>thanks</p><span id='bc_0_4MN' class='comment-actions secondary-text' kind='m'><a kind='i' href='javascript:;' target='_self' o='r'>Reply</a><span class='item-control blog-admin pid-1160480701'><a o='d' target='_self' href='https://www.blogger.com/delete-comment.g?blogID=7958828565254404797&amp;postID=1337211723869230880'>Delete</a></span></span></div><div id='bc_0_4BR' class='comment-replies'></div><div id='bc_0_4B_box' class='comment-replybox-single'></div></li><li id='bc_0_5B' class='comment' kind='b'><div class='avatar-image-container'><img src='//lh5.googleusercontent.com/-P1xVrAYtohc/AAAAAAAAAAI/AAAAAAAAAA4/oBoDvBZT4Y4/s35-c/photo.jpg'></img></div><div id='c7543038836751238381' class='comment-block'><div id='bc_0_5M' class='comment-header' kind='m'><cite class='user'><a rel='nofollow' href='https://www.blogger.com/profile/04740083241363695497'>Phone Advice</a></cite><span class='icon user'></span><span class='datetime secondary-text'><a rel='nofollow' href='https://www.listendata.com/2017/12/python-pandas-tutorial.html?showComment=1519797513442#c7543038836751238381'>27 February 2018 at 21:58</a></span></div><p id='bc_0_5MC' class='comment-content'>Thanks for sharing That&#39;s great Tips For Me you can Get Also more Software at <a href="http://www.getintopcs.org/" rel="nofollow"> getintopc</a><br /><br /></p><span id='bc_0_5MN' class='comment-actions secondary-text' kind='m'><a kind='i' href='javascript:;' target='_self' o='r'>Reply</a><span class='item-control blog-admin pid-2112497855'><a o='d' target='_self' href='https://www.blogger.com/delete-comment.g?blogID=7958828565254404797&amp;postID=7543038836751238381'>Delete</a></span></span></div><div id='bc_0_5BR' class='comment-replies'></div><div id='bc_0_5B_box' class='comment-replybox-single'></div></li><li id='bc_0_6B' class='comment' kind='b'><div class='avatar-image-container'><img src='//img1.blogblog.com/img/blank.gif'></img></div><div id='c4495903912263164164' class='comment-block'><div id='bc_0_6M' class='comment-header' kind='m'><cite class='user'>Sheetal</cite><span class='icon user'></span><span class='datetime secondary-text'><a rel='nofollow' href='https://www.listendata.com/2017/12/python-pandas-tutorial.html?showComment=1520690696577#c4495903912263164164'>10 March 2018 at 06:04</a></span></div><p id='bc_0_6MC' class='comment-content'>Probably the best thing for quick revision...great work!!!</p><span id='bc_0_6MN' class='comment-actions secondary-text' kind='m'><a kind='i' href='javascript:;' target='_self' o='r'>Reply</a><span class='item-control blog-admin pid-1918624941'><a o='d' target='_self' href='https://www.blogger.com/delete-comment.g?blogID=7958828565254404797&amp;postID=4495903912263164164'>Delete</a></span></span></div><div id='bc_0_6BR' class='comment-replies'></div><div id='bc_0_6B_box' class='comment-replybox-single'></div></li><li id='bc_0_7B' class='comment' kind='b'><div class='avatar-image-container'><img src='//img1.blogblog.com/img/blank.gif'></img></div><div id='c8358933922356100181' class='comment-block'><div id='bc_0_7M' class='comment-header' kind='m'><cite class='user'><a rel='nofollow' href='http://www.filehippo-free.co/'>saloni</a></cite><span class='icon user'></span><span class='datetime secondary-text'><a rel='nofollow' href='https://www.listendata.com/2017/12/python-pandas-tutorial.html?showComment=1524306700484#c8358933922356100181'>21 April 2018 at 03:31</a></span></div><p id='bc_0_7MC' class='comment-content'>Thanks for sharing That&#39;s great Tips For Me you can Get Also more Software at. </p><span id='bc_0_7MN' class='comment-actions secondary-text' kind='m'><a kind='i' href='javascript:;' target='_self' o='r'>Reply</a><span class='item-control blog-admin pid-628692765'><a o='d' target='_self' href='https://www.blogger.com/delete-comment.g?blogID=7958828565254404797&amp;postID=8358933922356100181'>Delete</a></span></span></div><div id='bc_0_7BR' class='comment-replies'></div><div id='bc_0_7B_box' class='comment-replybox-single'></div></li><li id='bc_0_8B' class='comment' kind='b'><div class='avatar-image-container'><img src='//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA=s35'></img></div><div id='c8764584708898738731' class='comment-block'><div id='bc_0_8M' class='comment-header' kind='m'><cite class='user'><a rel='nofollow' href='https://www.blogger.com/profile/04157264589199839233'>amol_benare604</a></cite><span class='icon user'></span><span class='datetime secondary-text'><a rel='nofollow' href='https://www.listendata.com/2017/12/python-pandas-tutorial.html?showComment=1524748618626#c8764584708898738731'>26 April 2018 at 06:16</a></span></div><p id='bc_0_8MC' class='comment-content'>Nice article...</p><span id='bc_0_8MN' class='comment-actions secondary-text' kind='m'><a kind='i' href='javascript:;' target='_self' o='r'>Reply</a><span class='item-control blog-admin pid-1268133442'><a o='d' target='_self' href='https://www.blogger.com/delete-comment.g?blogID=7958828565254404797&amp;postID=8764584708898738731'>Delete</a></span></span></div><div id='bc_0_8BR' class='comment-replies'></div><div id='bc_0_8B_box' class='comment-replybox-single'></div></li><li id='bc_0_9B' class='comment' kind='b'><div class='avatar-image-container'><img src='//lh4.googleusercontent.com/-HecOM1seTEg/AAAAAAAAAAI/AAAAAAAAABQ/Z1fLbTmZLzU/s35-c/photo.jpg'></img></div><div id='c5798386754559862723' class='comment-block'><div id='bc_0_9M' class='comment-header' kind='m'><cite class='user'><a rel='nofollow' href='https://www.blogger.com/profile/08270285723510268194'>getintopc Free Download Software</a></cite><span class='icon user'></span><span class='datetime secondary-text'><a rel='nofollow' href='https://www.listendata.com/2017/12/python-pandas-tutorial.html?showComment=1525409744519#c5798386754559862723'>3 May 2018 at 21:55</a></span></div><p id='bc_0_9MC' class='comment-content'>nice blog.. i think it is usefull</p><span id='bc_0_9MN' class='comment-actions secondary-text' kind='m'><a kind='i' href='javascript:;' target='_self' o='r'>Reply</a><span class='item-control blog-admin pid-153642270'><a o='d' target='_self' href='https://www.blogger.com/delete-comment.g?blogID=7958828565254404797&amp;postID=5798386754559862723'>Delete</a></span></span></div><div id='bc_0_9BR' class='comment-replies'></div><div id='bc_0_9B_box' class='comment-replybox-single'></div></li><li id='bc_0_10B' class='comment' kind='b'><div class='avatar-image-container'><img src='//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA=s35'></img></div><div id='c8431673315283389818' class='comment-block'><div id='bc_0_10M' class='comment-header' kind='m'><cite class='user'><a rel='nofollow' href='https://www.blogger.com/profile/17324836414198311234'>moorthy</a></cite><span class='icon user'></span><span class='datetime secondary-text'><a rel='nofollow' href='https://www.listendata.com/2017/12/python-pandas-tutorial.html?showComment=1527339242519#c8431673315283389818'>26 May 2018 at 05:54</a></span></div><p id='bc_0_10MC' class='comment-content'>nice useful for me </p><span id='bc_0_10MN' class='comment-actions secondary-text' kind='m'><a kind='i' href='javascript:;' target='_self' o='r'>Reply</a><span class='item-control blog-admin pid-98867304'><a o='d' target='_self' href='https://www.blogger.com/delete-comment.g?blogID=7958828565254404797&amp;postID=8431673315283389818'>Delete</a></span></span></div><div id='bc_0_10BR' class='comment-replies'></div><div id='bc_0_10B_box' class='comment-replybox-single'></div></li><li id='bc_0_12B' class='comment' kind='b'><div class='avatar-image-container'><img src='//1.bp.blogspot.com/_sZDsiI2NoiQ/Sk_JXkwBINI/AAAAAAAAAnw/4ZOqzBgcfYU/S45-s35/Goodpoem.bmp'></img></div><div id='c244531199091222777' class='comment-block'><div id='bc_0_12M' class='comment-header' kind='m'><cite class='user'><a rel='nofollow' href='https://www.blogger.com/profile/08321943379918399479'>Basling</a></cite><span class='icon user'></span><span class='datetime secondary-text'><a rel='nofollow' href='https://www.listendata.com/2017/12/python-pandas-tutorial.html?showComment=1528219247128#c244531199091222777'>5 June 2018 at 10:20</a></span></div><p id='bc_0_12MC' class='comment-content'>how to select a particular row and particulat column<br />say i want 5th row and 6th column cell value?</p><span id='bc_0_12MN' class='comment-actions secondary-text' kind='m'><a kind='i' href='javascript:;' target='_self' o='r'>Reply</a><span class='item-control blog-admin pid-1831385101'><a o='d' target='_self' href='https://www.blogger.com/delete-comment.g?blogID=7958828565254404797&amp;postID=244531199091222777'>Delete</a></span></span></div><div id='bc_0_12BR' class='comment-replies'><span id='bc_0_12b+seedt9DD' kind='d'><div id='bc_0_11T' class='comment-thread inline-thread' kind='t'   t='0' u='0'><span id='bc_0_11TT' class='thread-toggle thread-expanded' kind='g'><span id='bc_0_11TA' class='thread-arrow'></span><span id='bc_0_11TN' class='thread-count'><span id='bc_0_11TNT' style='display: none;'></span><span id='bc_0_11TNU' style='display: none;'></span><a href='javascript:;' target='_self'>Replies</a><div id='bc_0_11TD' class='thread-dropContainer thread-expanded'><span class='thread-drop'></span></div></span></span><ol id='bc_0_11TC' class='thread-chrome thread-expanded'><div><li id='bc_0_11B' class='comment' kind='b'><div class='avatar-image-container'><img src='//lh3.googleusercontent.com/-m-IN-WRLAdU/AAAAAAAAAAI/AAAAAAAAES0/KyMVqj64uyo/s35-c/photo.jpg'></img></div><div id='c3533071542677140936' class='comment-block'><div id='bc_0_11M' class='comment-header' kind='m'><cite class='user'><a rel='nofollow' href='https://www.blogger.com/profile/09802839558125192674'>Deepanshu Bhalla</a></cite><span class='icon user'></span><span class='datetime secondary-text'><a rel='nofollow' href='https://www.listendata.com/2017/12/python-pandas-tutorial.html?showComment=1529062547649#c3533071542677140936'>15 June 2018 at 04:35</a></span></div><p id='bc_0_11MC' class='comment-content'>income.iloc[4,5]</p><span id='bc_0_11MN' class='comment-actions secondary-text' kind='m'><span class='item-control blog-admin pid-966036103'><a o='d' target='_self' href='https://www.blogger.com/delete-comment.g?blogID=7958828565254404797&amp;postID=3533071542677140936'>Delete</a></span></span></div><div id='bc_0_11BR' class='comment-replies'></div><div id='bc_0_11B_box' class='comment-replybox-single'></div></li></div><div id='bc_0_11I' class='continue' kind='ci'><a href='javascript:;' target='_self'>Reply</a></div></ol><div id='bc_0_11T_box' class='comment-replybox-thread'></div></div></span></div><div id='bc_0_12B_box' class='comment-replybox-single'></div></li><li id='bc_0_13B' class='comment' kind='b'><div class='avatar-image-container'><img src='//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA=s35'></img></div><div id='c7939314578041889325' class='comment-block'><div id='bc_0_13M' class='comment-header' kind='m'><cite class='user'><a rel='nofollow' href='https://www.blogger.com/profile/16413978770533260760'>Srinivas G</a></cite><span class='icon user'></span><span class='datetime secondary-text'><a rel='nofollow' href='https://www.listendata.com/2017/12/python-pandas-tutorial.html?showComment=1530377431418#c7939314578041889325'>30 June 2018 at 09:50</a></span></div><p id='bc_0_13MC' class='comment-content'>Excellent, Thanks for sharing!!!</p><span id='bc_0_13MN' class='comment-actions secondary-text' kind='m'><a kind='i' href='javascript:;' target='_self' o='r'>Reply</a><span class='item-control blog-admin pid-490232343'><a o='d' target='_self' href='https://www.blogger.com/delete-comment.g?blogID=7958828565254404797&amp;postID=7939314578041889325'>Delete</a></span></span></div><div id='bc_0_13BR' class='comment-replies'></div><div id='bc_0_13B_box' class='comment-replybox-single'></div></li></ol><div id='bc_0_14I' class='continue' kind='ci'><a href='javascript:;' target='_self'>Add comment</a></div><div id='bc_0_14T_box' class='comment-replybox-thread'></div><div id='bc_0_14L' class='loadmore loaded' kind='rb'><a href='javascript:;' target='_self'>Load more...</a></div></div></div></div>
+</div>
+</div>
+<p class='comment-footer'>
+<div class='comment-form'>
+<a name='comment-form'></a>
+<div class='pesan-komentar'><p>
+</p></div>
+<a href='https://www.blogger.com/comment-iframe.g?blogID=7958828565254404797&postID=6410692069216731624' id='comment-editor-src'></a>
+<iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' frameborder='0' height='410' id='comment-editor' name='comment-editor' src='' width='100%'></iframe>
+<!--Can't find substitution for tag [post.friendConnectJs]-->
+<script src='https://www.blogger.com/static/v1/jsbin/2567313873-comment_from_post_iframe.js' type='text/javascript'></script>
+<script type='text/javascript'>BLOG_CMT_createIframe("https://www.blogger.com/rpc_relay.html","0");</script>
+</div>
+</p>
+<div id='backlinks-container'>
+<div id='Blog1_backlinks-container'>
+</div>
+</div>
+</div>
+</div>
+
+</div></div>
+<!--Can't find substitution for tag [adEnd]-->
+</div>
+<a class='recent-post-older-link' href='https://www.listendata.com/2017/12/k-nearest-neighbor-step-by-step-tutorial.html' id='Blog1_blog-pager-older-link' title='Older Post'>Next &#8594;</a>
+<a class='recent-post-newer-link' href='https://www.listendata.com/2017/12/numpy-tutorial.html' id='Blog1_blog-pager-newer-link' title='Newer Post'> &#8592; Prev</a>
+<div class='blog-pager' id='blog-pager'>
+<span id='blog-pager-newer-link'>
+<a class='blog-pager-newer-link' href='https://www.listendata.com/2017/12/numpy-tutorial.html' id='Blog1_blog-pager-newer-link' title='Newer Post'>Newer Post</a>
+</span>
+<span id='blog-pager-older-link'>
+<a class='blog-pager-older-link' href='https://www.listendata.com/2017/12/k-nearest-neighbor-step-by-step-tutorial.html' id='Blog1_blog-pager-older-link' title='Older Post'>Older Post</a>
+</span>
+<a class='home-link' href='https://www.listendata.com/'>Home</a>
+</div>
+<div class='clear'></div>
+<div class='post-feeds'>
+<div class='feed-links'>
+Subscribe to:
+<a class='feed-link' href='https://www.listendata.com/feeds/6410692069216731624/comments/default' target='_blank' type='application/atom+xml'>Post Comments (Atom)</a>
+</div>
+</div>
+<script type="text/javascript">window.___gcfg = {'lang': 'en_GB'};</script>
+</div></div>
+</div>
+</div>
+<aside id='sidebar-wrapper'>
+<div class='sidebar-container'>
+<div class='sidebar section' id='sidebar'><div class='widget HTML' data-version='1' id='HTML3'>
+</div><div class='widget HTML' data-version='1' id='HTML1'>
+<div class='widget-content'>
+<style>
+.tbisubscribe {
+border: 1px solid #D3D3D3;
+padding: 8px;
+width: 300px;
+-webkit-transition: all 0.5s ease-in-out;
+-moz-transition: all 0.5s ease-in-out;
+-ms-transition: all 0.5s ease-in-out;
+-o-transition: all 0.5s ease-in-out;
+transition: all 0.5s ease-in-out;
+}
+.tbisubscribe:hover {
+-moz-box-shadow: inset 1px 1px 10px 1px rgba(249, 215, 126, 1);
+-webkit-box-shadow: inset 1px 1px 10px 1px rgba(249, 215, 126, 1);
+box-shadow: inset 1px 1px 10px 1px rgba(249, 215, 126, 1);
+}
+.tbimailbox {
+border: 1px solid #D3D3D3;
+-webkit-border-radius: 4px;
+border-radius: 4px;
+-moz-box-shadow: 1px 1px 1px 1px rgba(255, 172, 84, 0.4) inset;
+-webkit-box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4) inset;
+box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4) inset;
+color: #666;
+font: 14px "trebuchet ms", sans-serif;
+padding: 7px 15px;
+width: 160px;
+-webkit-transition: all 0.5s ease-in-out;
+-moz-transition: all 0.5s ease-in-out;
+-ms-transition: all 0.5s ease-in-out;
+-o-transition: all 0.5s ease-in-out;
+transition: all 0.5s ease-in-out;
+}
+.tbimailbox:hover {
+-webkit-box-shadow: none;
+box-shadow: none;
+-webkit-transition: all 0.5s ease-in-out;
+-moz-transition: all 0.5s ease-in-out;
+-ms-transition: all 0.5s ease-in-out;
+-o-transition: all 0.5s ease-in-out;
+transition: all 0.5s ease-in-out;
+}
+.tbisubmit {
+font: bold 12px Tahoma, Geneva, sans-serif;
+font-style: normal;
+color: #ffffff;
+background: #BA0000;
+border: 0px solid #ffffff;
+text-shadow: 0px -1px 1px #222222;
+box-shadow: 2px 2px 5px #000000;
+-moz-box-shadow: 2px 2px 5px #000000;
+-webkit-box-shadow: 2px 2px 5px #000000;
+border-radius: 10px 10px 10px 10px;
+-moz-border-radius: 10px 10px 10px 10px;
+-webkit-border-radius: 10px 10px 10px 10px;
+padding: 8px 15px;
+cursor: pointer;
+margin: 0 auto;
+}
+.tbisubmit:active {
+cursor: pointer;
+position: relative;
+top: 2px;
+}
+.tbisubmit::-moz-focus-inner {
+border: 0;
+padding: 0;
+margin: 0;
+}
+
+.s-text strong,.social-counter{font-weight:900}.techornate-socials a{display:block;color:#fff;padding:12px 15px;position:relative;margin-bottom:5px;text-decoration:none}.techornate-socials a span,.techornate-socials a:before{z-index:2;position:relative}.social-counter{position:absolute;font-size:14px;line-height:1;padding-top:4px}.s-text{float:right}.techornate-socials a:after{content:" ";height:100%;width:0;top:0;left:0;position:absolute;background:#252b42;z-index:1}.fa-facebook:before{display:inline-block;width:16px;font-family:FontAwesome;margin-right:10px;padding-right:10px;font-size:18px;border-right:1px solid rgba(255,255,255,.3)}.fa-facebook{background:#1c3e67}.fa-facebook:before{content:"\f09a"}
+
+</style>
+
+<div class="techornate-socials">
+<a target="_blank" href="https://www.facebook.com/ListenData/" class="fa-facebook"><span class="s-text">Follow us on <strong>Facebook</strong></span></a>
+<div class="clear"></div>
+</div>
+
+<div class='tbisubscribe'>
+<div style='color: #990000; font-weight: bold; font: 22px Oswald, cursive; margin: 0px 0px 10px 15px;'>Join us with 5000+ Subscribers</div>
+<div style='color: #666666; font-weight: bold; font: 20px Oswald, cursive; margin: 0px 0px 10px 15px;'>Subscribe to Free Updates</div>
+<div style='margin: 10px 0 0 6px;'>
+<form action='https://feedburner.google.com/fb/a/mailverify' class='emailform'
+method='post' onsubmit='window.open(&apos;https://feedburner.google.com/fb/a/mailverify?uri=listendata&apos;, &apos;popupwindow&apos;, &apos;scrollbars=yes,width=550,height=520&apos;);return true'
+style='margin: 0pt;' target='popupwindow'>
+<input name='uri' type='hidden' value='listendata' />
+<input name='loc' type='hidden' value='en_US' />
+<input class='tbimailbox' name='email' onblur='if (this.value == &quot;&quot;) {this.value = &quot;Enter your email...&quot;;}'
+onfocus='if (this.value == &quot;Enter your email...&quot;) {this.value = &quot;&quot;}'
+type='text' value='Enter your email...' />
+<input alt='' class='tbisubmit' title='' type='submit' value='Subscribe'/>
+</form>
+</div></div>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=7958828565254404797&widgetType=HTML&widgetId=HTML1&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML1"));' target='configHTML1' title='Edit'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div><div class='widget HTML' data-version='1' id='HTML5'>
+<div id='mblfloater'>
+<div class='widget-content'>
+<!--
+<style type='text/css'>
+
+ul.list1 li:before
+{content:'\2713';
+  display:inline-block;
+  color:red;
+  padding:0 6px 0 0;
+  }
+ul.list1 li{list-style-type:none;font-size:1em;}
+
+  table.table1 {
+  text-align: left;
+  line-height: 30px;
+  border-spacing: 0;
+  border-collapse: separate;
+  border: 2px solid #e60000;
+  width: 300px;
+  margin: 10px auto;
+  border-radius: .25rem;
+ }
+
+table.table1 thead tr:first-child {
+  background: #e60000;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+}
+
+table.table1 th:first-child,
+table.table1 td:first-child {
+  padding: 0 15px 0 20px;
+  font-size: 15px;
+}
+
+table.table1 thead tr:last-child th {
+  border-bottom: 3px solid #ddd;
+}
+
+table.table1 tbody tr:last-child td {
+  border: none;
+}
+
+table.table1 tbody td {
+  border-bottom: 1px solid #ddd;
+}
+
+table.table1 td:last-child {
+  text-align: right;
+  padding-right: 10px;
+}
+
+.button{
+text-align:center;
+}
+
+</style>
+<table class="table1">
+  <thead>
+    <tr>
+      <th colspan="3">Live Online Training</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Predictive Modeling using SAS</td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td>Data Science using R</td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td>Practical SAS Programming</td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td>
+<div style="text-align:center;font-weight:bold;">
+<a href="https://www.listendata.com/2017/12/predictive-modeling-sas-r-training.html" target="_blank" rel="nofollow">Details</a>
+</div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+  <ul class="list1">
+    <li>Live Projects & Case Studies</li>
+    <li>Interview Preparation</li>
+    <li>Money Back Guarantee</li>
+    <li><b>Batch starts from February 10, 2018</b></li>
+    <li><b>Get 10% Off till Feb 01,2018</b></li>
+</ul>
+-->
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=7958828565254404797&widgetType=HTML&widgetId=HTML5&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML5"));' target='configHTML5' title='Edit'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div></div>
+<div class='clear'></div>
+</div>
+</aside>
+</div>
+<div class='clear'></div>
+<footer id='footer-wrapper'>
+<div class='footer-left'>
+Copyright 2017 <a href='https://www.listendata.com/' rel='copyright'>ListenData</a>
+</div>
+</footer>
+</div>
+<script type='text/javascript'>$(function(){$(".set-1").mtabs()});</script>
+<script type='text/javascript'>var ww=document.body.clientWidth;$(document).ready(function(){$(".nav-menu li a").each(function(){if($(this).next().length>0){$(this).addClass("parent")}});$(".toggleMenu").click(function(a){a.preventDefault();$(this).toggleClass("active");$(".nav-menu").toggle()});adjustMenu()});$(window).bind("resize orientationchange",function(){ww=document.body.clientWidth;adjustMenu()});var adjustMenu=function(){if(ww<768){$(".toggleMenu").css("display","inline-block");if(!$(".toggleMenu").hasClass("active")){$(".nav-menu").hide()}else{$(".nav-menu").show()}$(".nav-menu li").unbind("mouseenter mouseleave");$(".nav-menu li a.parent").unbind("click").bind("click",function(a){a.preventDefault();$(this).parent("li").toggleClass("hover")})}else{if(ww>=768){$(".toggleMenu").css("display","none");$(".nav-menu").show();$(".nav-menu li").removeClass("hover");$(".nav-menu li a").unbind("click");$(".nav-menu li").unbind("mouseenter mouseleave").bind("mouseenter mouseleave",function(){$(this).toggleClass("hover")})}}};</script>
+<script type='text/javascript'>
+/*! Matt Tabs v2.2.1 | https://github.com/matthewhall/matt-tabs */
+!function(d){var c=function(a,f){var e=this;e.element=a,e.$element=d(a),e.tabs=e.$element.children(),e.options=d.extend({},d.fn.mtabs.defaults,f),e.current_tab=0,e.init()};c.prototype={init:function(){var b=this;b.tabs.length&&(b.build(),b.buildTabMenu())},build:function(){var a=this,h=a.options,g=h.tab_text_el,f=h.container_class;a.tab_names=[],a.$wrapper=a.$element.wrapInner('<div class="'+f+'" />').find("."+f),a.tabs.wrapAll('<div class="'+h.tabs_container_class+'" />'),a.tabs.each(function(l,k){var j,i=d(k),b=g;j=i.find(b).filter(":first").hide().text(),a.tab_names.push(j)}),d.isFunction(h.onReady)&&h.onReady.call(a.element)},buildTabMenu:function(){for(var r,q=this,p=q.options,o=p.tabsmenu_el,n=q.tab_names,m="<"+o+' class="'+p.tabsmenu_class+'">',l=0,k=n.length,a=function(){var b=arguments;return p.tmpl.tabsmenu_tab.replace(/\{[0-9]\}/g,function(e){var f=Number(e.replace(/\D/g,""));return b[f]||""})};k>l;l++){m+=a(l+1,n[l])}m+="</"+o+">",q.$tabs_menu=d(m).prependTo(q.$wrapper),r=q.$tabs_menu.find(":first")[0].nodeName.toLowerCase(),q.$tabs_menu.on("click",r,function(f){var h=d(this),g=h.index();q.show(g),f.preventDefault()}).find(":first").trigger("click")},show:function(a){var h=this,g=h.options,f=g.active_tab_class;h.tabs.hide().filter(":eq("+a+")").show(),h.$tabs_menu.children().removeClass(f).filter(":eq("+a+")").addClass(f),d.isFunction(g.onTabSelect)&&a!==h.current_tab&&g.onTabSelect.call(h.element,a),h.current_tab=a},destroy:function(){var f=this,e=f.options.tab_text_el;f.$tabs_menu.remove(),f.tabs.unwrap().unwrap(),f.tabs.removeAttr("style"),f.tabs.children(e+":first").removeAttr("style"),f.$element.removeData("mtabs")}},d.fn.mtabs=function(b,a){return this.each(function(){var j,i=d(this),h=i.data("mtabs");j="object"==typeof b&&b,h||i.data("mtabs",h=new c(this,j)),"string"==typeof b&&h[b](a)})},d.fn.mtabs.defaults={container_class:"tabs",tabs_container_class:"tabs-content",active_tab_class:"active-tab",tab_text_el:"h1, h2, h3, h4, h5, h6",tabsmenu_class:"tabs-menu",tabsmenu_el:"ul",tmpl:{tabsmenu_tab:'<li class="tab-{0}"><span>{1}</span></li>'},onTabSelect:null}}(window.jQuery,window,document);</script>
+<script>
+/*<![CDATA[*/
+// Sticky Plugin
+// =============
+// Author: Syed Faizan Ali
+(function($) {
+    var defaults = {
+            topSpacing: 0,
+            bottomSpacing: 0,
+            className: 'is-sticky',
+            center: false
+        },
+        $window = $(window),
+        $document = $(document),
+        sticked = [],
+        windowHeight = $window.height(),
+        scroller = function() {
+            var scrollTop = $window.scrollTop(),
+                documentHeight = $document.height(),
+                dwh = documentHeight - windowHeight,
+                extra = (scrollTop > dwh) ? dwh - scrollTop : 0;
+            for (var i = 0; i < sticked.length; i++) {
+                var s = sticked[i],
+                    elementTop = s.stickyWrapper.offset().top,
+                    etse = elementTop - s.topSpacing - extra;
+                if (scrollTop <= etse) {
+                    if (s.currentTop !== null) {
+                        s.stickyElement.css('position', '').css('top', '').removeClass(s.className);
+                        s.currentTop = null;
+                    }
+                }
+                else {
+                    var newTop = documentHeight - s.elementHeight - s.topSpacing - s.bottomSpacing - scrollTop - extra;
+                    if (newTop < 0) {
+                        newTop = newTop + s.topSpacing;
+                    } else {
+                        newTop = s.topSpacing;
+                    }
+                    if (s.currentTop != newTop) {
+                        s.stickyElement.css('position', 'fixed').css('top', newTop).addClass(s.className);
+                        s.currentTop = newTop;
+                    }
+                }
+            }
+        },
+        resizer = function() {
+            windowHeight = $window.height();
+        };
+    // should be more efficient than using $window.scroll(scroller) and $window.resize(resizer):
+    if (window.addEventListener) {
+        window.addEventListener('scroll', scroller, false);
+        window.addEventListener('resize', resizer, false);
+    } else if (window.attachEvent) {
+        window.attachEvent('onscroll', scroller);
+        window.attachEvent('onresize', resizer);
+    }
+    $.fn.sticky = function(options) {
+        var o = $.extend(defaults, options);
+        return this.each(function() {
+            var stickyElement = $(this);
+            if (o.center)
+                var centerElement = "margin-left:auto;margin-right:auto;";
+            stickyId = stickyElement.attr('id');
+            stickyElement
+                .wrapAll('<div id="' + stickyId + 'StickyWrapper" style="' + centerElement + '"></div>')
+                .css('width', stickyElement.width());
+            var elementHeight = stickyElement.outerHeight(),
+                stickyWrapper = stickyElement.parent();
+            stickyWrapper
+                .css('width', stickyElement.outerWidth())
+                .css('height', elementHeight)
+                .css('clear', stickyElement.css('clear'));
+            sticked.push({
+                topSpacing: o.topSpacing,
+                bottomSpacing: o.bottomSpacing,
+                stickyElement: stickyElement,
+                currentTop: null,
+                stickyWrapper: stickyWrapper,
+                elementHeight: elementHeight,
+                className: o.className
+            });
+        });
+    };
+})(jQuery);
+/*]]>*/
+</script>
+<script type='text/javascript'>
+   $(document).ready(function(){
+    $("#mblfloater").sticky({topSpacing:0});
+   });
+ </script>
+<script type='text/javascript'>
+$(document).ready(function(){
+  $(".sh-section-btn").on("click",function(){
+    $(this).parent().children(".h-section-cont").slideToggle(200);
+  });
+});
+</script>
+
+
+<!--
+<script type="text/javascript" src="https://www.blogger.com/static/v1/widgets/2647409398-widgets.js"></script>
+<script type='text/javascript'>
+window['__wavt'] = 'AOuZoY7nIsNhG0To3Z4JX7fGidnHPP7-NA:1535029719551';_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d7958828565254404797','//www.listendata.com/2017/12/python-pandas-tutorial.html','7958828565254404797');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '7958828565254404797', 'title': 'ListenData', 'url': 'https://www.listendata.com/2017/12/python-pandas-tutorial.html', 'canonicalUrl': 'https://www.listendata.com/2017/12/python-pandas-tutorial.html', 'homepageUrl': 'https://www.listendata.com/', 'searchUrl': 'https://www.listendata.com/search', 'canonicalHomepageUrl': 'https://www.listendata.com/', 'blogspotFaviconUrl': 'https://www.listendata.com/favicon.ico', 'bloggerUrl': 'https://www.blogger.com', 'hasCustomDomain': true, 'httpsEnabled': true, 'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': 'UA-76384860-1', 'encoding': 'UTF-8', 'locale': 'en-GB', 'localeUnderscoreDelimited': 'en_gb', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22ListenData - Atom\x22 href\x3d\x22https://www.listendata.com/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x22ListenData - RSS\x22 href\x3d\x22https://www.listendata.com/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22ListenData - Atom\x22 href\x3d\x22https://www.blogger.com/feeds/7958828565254404797/posts/default\x22 /\x3e\n\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22ListenData - Atom\x22 href\x3d\x22https://www.listendata.com/feeds/6410692069216731624/comments/default\x22 /\x3e\n', 'meTag': '', 'adsenseClientId': 'ca-pub-4695912699318711', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': false, 'ieCssRetrofitLinks': '\x3c!--[if IE]\x3e\x3cscript type\x3d\x22text/javascript\x22 src\x3d\x22https://www.blogger.com/static/v1/jsbin/3762807459-ieretrofit.js\x22\x3e\x3c/script\x3e\n\x3c![endif]--\x3e', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/51418131e0e394e4', 'plusOneApiSrc': 'https://apis.google.com/js/plusone.js', 'sharing': {'platforms': [{'name': 'Get link', 'key': 'link', 'shareMessage': 'Get link', 'target': ''}, {'name': 'Facebook', 'key': 'facebook', 'shareMessage': 'Share to Facebook', 'target': 'facebook'}, {'name': 'BlogThis!', 'key': 'blogThis', 'shareMessage': 'BlogThis!', 'target': 'blog'}, {'name': 'Twitter', 'key': 'twitter', 'shareMessage': 'Share to Twitter', 'target': 'twitter'}, {'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': 'Share to Pinterest', 'target': 'pinterest'}, {'name': 'Google+', 'key': 'googlePlus', 'shareMessage': 'Share to Google+', 'target': 'googleplus'}, {'name': 'Email', 'key': 'email', 'shareMessage': 'Email', 'target': 'email'}], 'googlePlusShareButtonWidth': 300, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27en_GB\x27};\x3c/script\x3e'}, 'hasCustomJumpLinkMessage': true, 'jumpLinkMessage': 'READ MORE &#187;', 'pageType': 'item', 'postId': '6410692069216731624', 'postImageThumbnailUrl': 'https://1.bp.blogspot.com/-lraeOI1CwE0/WkPx7GXrlMI/AAAAAAAAGkY/dMU2LC9kUZMMR8C4ZoKbIbH_VahIba9KACLcBGAs/s72-c/pandas.PNG', 'postImageUrl': 'https://1.bp.blogspot.com/-lraeOI1CwE0/WkPx7GXrlMI/AAAAAAAAGkY/dMU2LC9kUZMMR8C4ZoKbIbH_VahIba9KACLcBGAs/s1600/pandas.PNG', 'pageName': 'Pandas Python Tutorial - Learn by Examples', 'pageTitle': 'ListenData: Pandas Python Tutorial - Learn by Examples', 'metaDescription': 'Python Pandas Tutorial for Beginners  - Step by step guide to learn data analysis using python and pandas package with examples to handle and manipulate data'}}, {'name': 'features', 'data': {'cmt_anon_warn': 'false', 'sharing_get_link_dialog': 'true', 'sharing_native': 'false'}}, {'name': 'messages', 'data': {'edit': 'Edit', 'linkCopiedToClipboard': 'Link copied to clipboard', 'ok': 'Ok', 'postLink': 'Post link'}}, {'name': 'template', 'data': {'name': 'custom', 'localizedName': 'Custom', 'isResponsive': false, 'isAlternateRendering': false, 'isCustom': true}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\x3dclassic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\x3dflipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\x3dmagazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\x3dmosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\x3dsidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\x3dsnapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\x3dtimeslide'}, 'isMobile': false, 'title': 'Pandas Python Tutorial - Learn by Examples', 'description': 'Python Pandas Tutorial for Beginners  - Step by step guide to learn data analysis using python and pandas package with examples to handle and manipulate data', 'featuredImage': 'https://1.bp.blogspot.com/-lraeOI1CwE0/WkPx7GXrlMI/AAAAAAAAGkY/dMU2LC9kUZMMR8C4ZoKbIbH_VahIba9KACLcBGAs/s1600/pandas.PNG', 'url': 'https://www.listendata.com/2017/12/python-pandas-tutorial.html', 'type': 'item', 'isSingleItem': true, 'isMultipleItems': false, 'isError': false, 'isPage': false, 'isPost': true, 'isHomepage': false, 'isArchive': false, 'isLabelSearch': false, 'postId': 6410692069216731624}}]);
+_WidgetManager._RegisterWidget('_NavbarView', new _WidgetInfo('Navbar1', 'navbar', null, document.getElementById('Navbar1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'header', null, document.getElementById('Header1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'main', null, document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'useNgc': false, 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/2397695905-lbx__en_gb.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/368954415-lightbox_bundle.css'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML3', 'sidebar', null, document.getElementById('HTML3'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML1', 'sidebar', null, document.getElementById('HTML1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML5', 'sidebar', null, document.getElementById('HTML5'), {}, 'displayModeFull'));
+</script>
+</body>
+--> </body>
+</html>
