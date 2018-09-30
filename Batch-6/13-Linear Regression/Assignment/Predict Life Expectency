@@ -1,0 +1,18 @@
+Predict Life Expectency
+
+The data-set aims to answer the following key questions: 
+
+
+1. Do all the necessary preprocessing.
+
+2. Does various predicting factors which has been chosen initially really affect the Life expectancy? What are the predicting variables actually affecting the life expectancy? 
+
+3. Should a country having a lower life expectancy value(<65) increase its healthcare expenditure in order to improve its average lifespan? 
+
+4. How does Infant and Adult mortality rates affect life expectancy? 
+
+5. Does Life Expectancy has positive or negative correlation with eating habits, lifestyle, exercise, smoking, drinking alcohol etc. 
+
+6. What is the impact of schooling on the lifespan of humans? 
+
+7. Does Life Expectancy have positive or negative relationship with drinking alcohol? 7. Do densely populated countries tend to have lower life expectancy? 8. What is the impact of Immunization coverage on life Expectancy?
